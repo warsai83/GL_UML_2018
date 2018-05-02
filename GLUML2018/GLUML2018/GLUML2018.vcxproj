@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Empreinte.cpp" />
+    <ClCompile Include="GestionEmpreinte.cpp" />
+    <ClCompile Include="MaladIF.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Empreinte.h" />
+    <ClInclude Include="GestionEmpreinte.h" />
+    <ClInclude Include="MaladIF.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{09B48FE1-1754-4124-AAC1-B7EE82F6FF56}</ProjectGuid>
     <RootNamespace>GLUML2018</RootNamespace>
@@ -110,13 +120,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Module.cpp" />
-    <ClCompile Include="SClasse.cpp" />
     <ClCompile Include="Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Module.h" />
-    <ClInclude Include="SClasse.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
