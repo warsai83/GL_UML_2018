@@ -1,21 +1,30 @@
+/*************************************************************************
+Maladie  -  description
+Classe représentant une maladie connue, elle possède en attribut les
+empreintes lui correspondant
+-------------------
+début                :	02-05-2018
+copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
+Stanley Cheah, William Occelli
+e-mail               :	matthieu.halunka@insa-lyon.fr
+mathilde.moureau@insa-lyon.fr
+stanley.cheah@insa-lyon.fr
+william.occelli@insa-lyon.fr
+
+*************************************************************************/
+//--- Réalisation de la classe <Empreinte> (fichier Empreinte.cpp)--------
+
+//---------------------------------------------------------------- INCLUDE
 #include "Maladie.h"
 
 
-//Constructor ------------------------------------------------
-Maladie::Maladie()
-{
-}
+//----------------------------------------------------------------- PUBLIC
+//----------------------------------------------------- Méthodes publiques
 
-//Destructor -------------------------------------------------
-Maladie::~Maladie()
-{
-}
-
-//PUBLIC -----------------------------------------------------
 void Maladie::AjouterEmpreinte(Empreinte emp)
 {
 	list<Empreinte>::iterator it = ListeEmpreintes.begin();
-	ListeEmpreintes.insert(it,emp);
+	ListeEmpreintes.insert(it, emp);
 }
 
 bool operator==(Maladie const &M1, Maladie const &M2)
@@ -44,4 +53,13 @@ string Maladie::toString()
 	}
 	s += "~";
 	return s;
+}
+
+//-------------------------------------------- Constructeurs - destructeur
+Maladie::Maladie()
+{
+}
+
+Maladie::~Maladie()
+{
 }
