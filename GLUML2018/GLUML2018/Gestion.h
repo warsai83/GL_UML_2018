@@ -13,6 +13,7 @@ e-mail               : $EMAIL$
 //--------------------------------------------------- Interfaces utilisées
 #include <string>
 #include <vector>
+#include <set>
 
 #include "Empreinte.h"
 #include "Maladie.h"
@@ -40,9 +41,9 @@ public:
 	// Contrat :
 	//
 	static string AfficherEmpreinte(vector<Empreinte> listeEmpreinte);
-	static vector<Maladie> GetListeMaladie(vector<Empreinte> listeEmpreinte);
-	static string GetDetail(string nomMaladie);
-	static Maladie analyseEmpreinte(vector<Empreinte>,Empreinte);
+	static set<Maladie> GetListeMaladie(vector<Empreinte> listeEmpreinte);
+	static vector<Empreinte> GetDetail(string nomMaladie);
+	static set<Maladie> analyseEmpreinte(vector<Empreinte>,Empreinte);
 
 
 
