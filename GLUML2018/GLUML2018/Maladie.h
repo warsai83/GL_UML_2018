@@ -1,6 +1,8 @@
 #pragma once
 #include <list>
+#include <string>
 #include "Empreinte.h"
+
 
 class Maladie
 {
@@ -10,10 +12,11 @@ public:
 	void AjouterEmpreinte(Empreinte emp);
 	string toString();
 	//surcharge d'opérateur
-	bool operator==(Maladie const &M1, Maladie const &M2);
 	string getName()const ;
 private:
 	string Name;
 	list <Empreinte> ListeEmpreintes; 
 };
+
+bool operator==(Maladie const &, Maladie const &);
 

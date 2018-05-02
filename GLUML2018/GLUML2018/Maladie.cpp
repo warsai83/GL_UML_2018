@@ -1,16 +1,17 @@
 #include "Maladie.h"
 
 
-
+//Constructor ------------------------------------------------
 Maladie::Maladie()
 {
 }
 
-
+//Destructor -------------------------------------------------
 Maladie::~Maladie()
 {
 }
 
+//PUBLIC -----------------------------------------------------
 void Maladie::AjouterEmpreinte(Empreinte emp)
 {
 	list<Empreinte>::iterator it = ListeEmpreintes.begin();
