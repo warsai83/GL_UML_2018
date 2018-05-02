@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Analog.cpp" />
     <ClCompile Include="Empreinte.cpp" />
     <ClCompile Include="GestionEmpreinte.cpp" />
     <ClCompile Include="Lecture.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Maladie.cpp" />
     <ClCompile Include="MaladIF.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +32,7 @@
     <ClInclude Include="Empreinte.h" />
     <ClInclude Include="GestionEmpreinte.h" />
     <ClInclude Include="Lecture.h" />
+    <ClInclude Include="Maladie.h" />
     <ClInclude Include="MaladIF.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -123,9 +126,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Source.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
