@@ -19,11 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="A:\Users\Bureau\Analog.cpp" />
+    <ClCompile Include="A:\Users\Bureau\Lecture.cpp" />
     <ClCompile Include="Empreinte.cpp" />
     <ClCompile Include="GestionEmpreinte.cpp" />
     <ClCompile Include="MaladIF.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="A:\Users\Bureau\Lecture.h" />
     <ClInclude Include="Empreinte.h" />
     <ClInclude Include="GestionEmpreinte.h" />
     <ClInclude Include="MaladIF.h" />
