@@ -1,6 +1,6 @@
 /*************************************************************************
                            Console  -  description
-    Classe permettant la'affichage sur la console de visual studio
+    Classe permettant l'affichage sur la console de visual studio
                              -------------------
     début                : 02-05-2018
     copyright            : (C) 2018 par Halunka Matthieu, Mathilde Moureau
@@ -91,7 +91,7 @@ int lireEntier() {
 
 string lireChaine() {
 	string lecture;
-	lecture << cin;
+	cin>>lecture;
 	return lecture;
 }
 
