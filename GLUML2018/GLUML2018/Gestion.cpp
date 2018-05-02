@@ -1,0 +1,71 @@
+/*************************************************************************
+Gestion  -  description
+-------------------
+début                : $DATE$
+copyright            : (C) $YEAR$ par $AUTHOR$
+e-mail               : $EMAIL$
+*************************************************************************/
+
+//---------- Réalisation de la classe <Gestion> (fichier Gestion.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+using namespace std;
+#include <iostream>
+
+//------------------------------------------------------ Include personnel
+#include "Gestion.h"
+
+//------------------------------------------------------------- Constantes
+
+//----------------------------------------------------------------- PUBLIC
+
+//----------------------------------------------------- Méthodes publiques
+// type Gestion::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
+string Gestion::AfficherEmpreinte(vector<Empreinte> listeEmpreinte) {
+	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
+		i->
+	}
+}
+vector<Maladie> Gestion::GetListeMaladie(vector<Empreinte> listeEmpreinte) {
+
+}
+string Gestion::GetDetail(string nomMaladie) {
+
+}
+Maladie Gestion::analyseEmpreinte(vector<Empreinte>, Empreinte) {
+
+}
+
+//-------------------------------------------- Constructeurs - destructeur
+
+Gestion::Gestion()
+// Algorithme :
+//
+{
+#ifdef MAP
+	cout << "Appel au constructeur de <Gestion>" << endl;
+#endif
+} //----- Fin de Gestion
+
+
+Gestion::~Gestion()
+// Algorithme :
+//
+{
+#ifdef MAP
+	cout << "Appel au destructeur de <Gestion>" << endl;
+#endif
+} //----- Fin de ~Gestion
+
+
+  //------------------------------------------------------------------ PRIVE
+
+  //----------------------------------------------------- Méthodes protégées
+
+
