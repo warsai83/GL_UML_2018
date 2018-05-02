@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Empreinte.cpp" />
-    <ClCompile Include="Formateur.cpp" />
     <ClCompile Include="GestionEmpreinte.cpp" />
     <ClCompile Include="Lecture.cpp" />
     <ClCompile Include="main.cpp" />
@@ -29,7 +28,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Empreinte.h" />
-    <ClInclude Include="Formateur.h" />
     <ClInclude Include="GestionEmpreinte.h" />
     <ClInclude Include="Lecture.h" />
     <ClInclude Include="Maladie.h" />
