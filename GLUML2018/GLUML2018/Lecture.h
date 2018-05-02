@@ -20,7 +20,6 @@ using namespace std;
 #include <string>
 #include <fstream>
 
-#include "Formateur.h"
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Lecture>
@@ -36,26 +35,10 @@ class Lecture {
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    // void Charger ();
-    // Mode d'emploi :
-    //      L'appel à cette méthode permet de lire une ligne du fichier
-    //      ouvert et d'invoquer la méthode permettant d'extraire les
-    //      informations contenues par la ligne afin de les stocker
-    //      dans les attributs de l'objet Decoupeur.
-    // Contrat :
-    //      Le fichier doit être lisible et les requêtes de log contenues
-    //      en son sein doivent être correctement formées et entières.
     void Charger();
 
 //-------------------------------------------- Constructeurs - destructeur
 
-    Lecture (const Lecture & uneLecture);
-    // Mode d'emploi (constructeur de copie) :
-    //  Usage interdit ! Son usage ne permet pas de mettre
-    //  l'ifstream à la même position (au sein du fichier à lire)
-    //  que celui de l'objet à copier !
-    // Contrat :
-    //  Aucun
 
     Lecture (string fichier);
     // Mode d'emploi :

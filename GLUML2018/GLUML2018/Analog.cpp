@@ -98,7 +98,7 @@ ostream & raz (ostream & os){
 
 //-------------------------------------------- Constructeurs - destructeur
 
-int main(int n, char *params[]){
+int main2(int n, char *params[]){
     /**********************
         Lecture des options d'exécution.
     **********************/

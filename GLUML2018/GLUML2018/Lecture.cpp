@@ -1,13 +1,16 @@
 /*************************************************************************
-                           Lecture -  description
+                           Formateur -  description
     Classe permettant de lire un fichier log d'un serveur apache
     et d'en extraire les informations contenues dans chaque requêtes
     afin de pouvoir les exploiter avec l'outil Analog.
                              -------------------
-    début                : 07-02-2018
-    copyright            : (C) 2018 par Halunka Matthieu, Augustin Bodet
-    e-mail               : matthieu.halunka@insa-lyon.fr
-                           augustin.bodet@insa-lyon.fr
+    début                : 02-05-2018
+    copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu, Moureau Mathilde, Occelli William 
+
+    e-mail               : stanley.cheah@insa-lyon.fr
+						   matthieu.halunka@insa-lyon.fr
+                           mathilde.moureau@insa-lyon.fr
+						   william.occelli@insa-lyon.fr
 *************************************************************************/
 
 //---------- Réalisation de la classe <Generateur> (fichier Lecture.cpp) ------------
@@ -20,6 +23,7 @@ using namespace std;
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 //------------------------------------------------------ Include personnel
 #include "Lecture.h"
@@ -38,89 +42,59 @@ using namespace std;
 //          On incrémente l'Indice pour connaître le nombre de lignes lues
 //          depuis le début de l'existance de notre objet.
 //      Fin SI
-void Lecture::Charger(){
-    if (LecturePossible){
-        string ligne;
-        getline(IfFichier,ligne);
-        if (IfFichier.eof()){
-            LecturePossible=false;
-            IfFichier.close();
-            return;
-        }
-        Decoupeur->Decouper(ligne);
-        Indice = Indice +1;
+void Lecture::Charger() {
+	vector<string> tabString;
+	string ligne;
+	while (getline(IfFichier, ligne))
+	{
+		tabString.push_back(ligne);
 #ifdef DEBUG_LECTURE
-        cout <<"Ligne numéro "<< Indice << endl << ligne << endl;
+		cout << ligne << endl;
 #endif
-    }
+	}
+#ifdef DEBUG_LECTURE
+	cout << ligne << endl;
+
+	vector<string>::iterator it = tabString.begin();
+	cout << "tabString contient:";
+	for (it = tabString.begin(); it<tabString.end(); it++)
+	{
+	cout << ' ' << *it <<endl;
+	}
+#endif
+
 }//Fin de Charger
 
-Lecture::Lecture(const Lecture & uneLecture) : IfFichier(uneLecture.nomFichier, ios::in) {
-// Algorithme :
-//  Usage Interdit !
-//  Copie les attributs copiables et tente d'ouvrir un flux de lecture identique.
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Lecture>" << endl;
-#endif
-    nomFichier=uneLecture.nomFichier;
-    Indice = 0;
-
-    Decoupeur=new Formateur();
-    Decoupeur->IP=uneLecture.Decoupeur->IP;
-    Decoupeur->userLog=uneLecture.Decoupeur->userLog;
-    Decoupeur->authUser=uneLecture.Decoupeur->authUser;
-    Decoupeur->time=uneLecture.Decoupeur->time;
-    Decoupeur->typeRequest=uneLecture.Decoupeur->typeRequest;
-    Decoupeur->target=uneLecture.Decoupeur->target;
-    Decoupeur->httpEnd=uneLecture.Decoupeur->httpEnd;
-    Decoupeur->code=uneLecture.Decoupeur->code;
-    Decoupeur->length=uneLecture.Decoupeur->length;
-    Decoupeur->referer=uneLecture.Decoupeur->referer;
-    Decoupeur->idNav=uneLecture.Decoupeur->idNav;
-
-    //Remise de l'ifstream à la même position
-    //int pos=(uneLecture.IfFichier).tellg();
-    //IfFichier.seekg(pos);
-    if (!uneLecture.LecturePossible||IfFichier.fail())
-    {
-        LecturePossible=false;
-        cerr<<"Fichier introuable ou impossible à ouvrir : "<<nomFichier<<endl;
-        IfFichier.close();
-    }else
-    {
-        LecturePossible=true;
-    }
-    Indice=uneLecture.Indice;
-}//----- Fin de Lecture (constructeur de copie)
 
 Lecture::Lecture(string fichier) : IfFichier(fichier, ios::in) {
-// Algorithme :
-//  Crée l'ifstream associé au fichier à lire.
-//  Regarde si la lecture est possible, si non, on renvoie une
-//  erreur sur le terminal et on empêche la lecture.
+	// Algorithme :
+	//  Crée l'ifstream associé au fichier à lire.
+	//  Regarde si la lecture est possible, si non, on renvoie une
+	//  erreur sur le terminal et on empêche la lecture.
 #ifdef MAP
-    cout << "Appel au constructeur de <Lecture>" << endl;
+	cout << "Appel au constructeur de <Lecture>" << endl;
 #endif
-    nomFichier=fichier;
-    Indice = 0;
-    Decoupeur=new Formateur();
-    if (IfFichier.fail())
-    {
-        LecturePossible=false;
-        cerr<<"Fichier introuable ou impossible à ouvrir : "<<nomFichier<<endl;
-        IfFichier.close();
-    }else
-    {
-        LecturePossible=true;
-    }
+	nomFichier = fichier;
+	Indice = 0;
+	Decoupeur = new Formateur();
+	if (IfFichier.fail())
+	{
+		LecturePossible = false;
+		cerr << "Fichier introuvable ou impossible à ouvrir : " << nomFichier << endl;
+		IfFichier.close();
+	}
+	else
+	{
+		LecturePossible = true;
+	}
 }//----- Fin de Lecture
 
-Lecture::~Lecture() {
-// Algorithme :
-//  On supprime l'objet Decoupeur.
-#ifdef MAP
-    cout << "Appel au destructeur de <Lecture>" << endl;
-#endif
-    delete Decoupeur;
-}//----- Fin de ~Lecture
 
+Lecture::~Lecture() {
+	// Algorithme :
+	//  On supprime l'objet Decoupeur.
+#ifdef MAP
+	cout << "Appel au destructeur de <Lecture>" << endl;
+#endif
+	delete Decoupeur;
+}//----- Fin de ~Lecture
