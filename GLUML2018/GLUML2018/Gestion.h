@@ -43,7 +43,7 @@ public:
 	static string AfficherEmpreinte(vector<Empreinte> listeEmpreinte);
 	static set<Maladie> GetListeMaladie(vector<Empreinte> listeEmpreinte);
 	static vector<Empreinte> GetDetail(string nomMaladie);
-	static Maladie analyseEmpreinte(vector<Empreinte>,Empreinte);
+	static set<Maladie> analyseEmpreinte(vector<Empreinte>,Empreinte);
 
 
 

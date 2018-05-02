@@ -43,11 +43,22 @@ set<Maladie> Gestion::GetListeMaladie(vector<Empreinte> listeEmpreinte) {
 }
 vector<Empreinte> Gestion::GetDetail(set<Maladie> setMaladie, string nomMaladie) {
 	for (std::set<Maladie>::iterator i = setMaladie.begin(); i != setMaladie.end(); i++) {
-		if i->getName() == 
+		if (i->getName() == nomMaladie) {
+			return i->getListeEmpreintes();
+		}
 	}
+	vector<Empreinte> ListeEmpreintes;
+	return ListeEmpreintes;
 }
-Maladie Gestion::analyseEmpreinte(vector<Empreinte>, Empreinte) {
-
+set<Maladie> Gestion::analyseEmpreinte(vector<Empreinte> references, Empreinte e ) {
+	set<Maladie> setMaladies;
+	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
+		//TODO
+		if (true) {
+			setMaladies.insert(i->getDisease());
+		}
+	}
+	return setMaladies;
 }
 
 //-------------------------------------------- Constructeurs - destructeur
