@@ -25,5 +25,6 @@ string Maladie::toString()
 	{
 		s += (*it).toString() + "\r\n";
 	}
+	s += "~";
 	return s;
 }
