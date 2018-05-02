@@ -9,7 +9,10 @@ public:
 	~Maladie();
 	void AjouterEmpreinte(Empreinte emp);
 	string toString();
-private: 
+	//surcharge d'opérateur
+	bool operator==(Maladie const &M1, Maladie const &M2);
+	string getName()const ;
+private:
 	string Name;
 	list <Empreinte> ListeEmpreintes; 
 };
