@@ -21,12 +21,18 @@
   <ItemGroup>
     <ClCompile Include="Empreinte.cpp" />
     <ClCompile Include="GestionEmpreinte.cpp" />
+    <ClCompile Include="LectureEmpreinte.cpp" />
+    <ClCompile Include="Maladie.cpp" />
     <ClCompile Include="MaladIF.cpp" />
+    <ClCompile Include="ParseurEmpreinte.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Empreinte.h" />
     <ClInclude Include="GestionEmpreinte.h" />
+    <ClInclude Include="LectureEmpreinte.h" />
+    <ClInclude Include="Maladie.h" />
     <ClInclude Include="MaladIF.h" />
+    <ClInclude Include="ParseurEmpreinte.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{09B48FE1-1754-4124-AAC1-B7EE82F6FF56}</ProjectGuid>
