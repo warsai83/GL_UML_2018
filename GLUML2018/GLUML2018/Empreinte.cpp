@@ -1,6 +1,5 @@
 #include "Empreinte.h"
 
-
 //Constructeurs ----------------------------------------------------------------
 Empreinte::Empreinte()
 {
@@ -20,6 +19,6 @@ Empreinte::~Empreinte()
 //PUBLIC ------------------------------------------------------------------------
 string Empreinte::toString()
 {
-	string s = to_string(NoID) + ";" + to_string(A1) +";"+ to_string(A2) +";"+ to_string(A3) +";"+ to_string(A4) +";"+ to_string(AZ51) +";"+ Disease;
+	string s = to_string(NoID) + ";" + to_string(A1) +";"+ to_string(A2) +";"+ to_string(A3) +";"+ to_string(A4) +";"+ to_string(AZ51) +";"+ Disease.toString();
 	return s;
 }

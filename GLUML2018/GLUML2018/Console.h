@@ -1,6 +1,6 @@
 /*************************************************************************
 					Console  -  description
-		Classe permettant la'affichage sur la console de visual studio
+		Classe permettant l'affichage sur la console de visual studio
 							-------------------
 	début                : 02-05-2018
 	copyright            : (C) 2018 par Halunka Matthieu, Mathilde Moureau
@@ -17,13 +17,18 @@
 
 //------------------------------------------------------------------------
 // Rôle du module <Console>
-//
-//
+//	Permet d'utiliser la sortie console pour intérargir avec l'utilisateur
 //------------------------------------------------------------------------
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
 
+#include <iostream>
+#include <cstring>
+#include <string>
+
+#include <fstream>
+#include <sstream>
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -54,11 +59,16 @@ class Console {
 	//----------------------------------------------------------------- PUBLIC
 public:
 	//----------------------------------------------------- Méthodes publiques
-	void afficherErreur(string err);
 
-	void afficherDanger(string danger);
+#ifdef DEBUG
+	void afficherDebug(string &info);
+#endif
 
-	void afficherMessage(string msg);
+	void afficherErreur(const string &err);
+
+	void afficherDanger(const string &danger);
+
+	void afficherMessage(const string &msg);
 
 	int lireEntier();
 
@@ -75,11 +85,11 @@ public:
 	// Mode d'emploi :
 	//  Permet de créer l'objet et d'initialiser ses attributs.
 	// Contrat :
-	//		Aucun
+	//	Aucun
 
 	virtual ~Console();
 	// Mode d'emploi :
-	//  
+	//  Permet de détruire l'objet console.
 	// Contrat :
 	//  Aucun
 
