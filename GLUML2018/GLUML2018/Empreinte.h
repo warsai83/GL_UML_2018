@@ -39,6 +39,7 @@ public:
 	Empreinte();
 	Empreinte(int, double, double, double, double, double, Maladie);
 	~Empreinte();
+	Maladie getDisease() const;
 
 	////////////////////////////////////////////////////////////////// PRIVATE
 private:

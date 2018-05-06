@@ -23,7 +23,7 @@ william.occelli@insa-lyon.fr
 
 void Maladie::AjouterEmpreinte(Empreinte emp)
 {
-	list<Empreinte>::iterator it = ListeEmpreintes.begin();
+	vector<Empreinte>::iterator it = ListeEmpreintes.begin();
 	ListeEmpreintes.insert(it, emp);
 }
 
@@ -43,10 +43,15 @@ string Maladie::getName() const
 	return Name;
 }
 
+vector<Empreinte> Maladie::getListeEmpreintes() const
+{
+	return ListeEmpreintes;
+}
+
 string Maladie::toString()
 {
 	string s = Name + " :\r\n";
-	list<Empreinte>::iterator it;
+	vector<Empreinte>::iterator it;
 	for (it = ListeEmpreintes.begin(); it != ListeEmpreintes.end(); ++it)
 	{
 		s += (*it).toString() + "\r\n";

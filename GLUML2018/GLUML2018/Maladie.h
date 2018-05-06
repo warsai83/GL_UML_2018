@@ -19,7 +19,7 @@ william.occelli@insa-lyon.fr
 /////////////////////////////////////////////////////////////////  INCLUDE
 //-------------------------------------------------------- Include système
 #pragma once
-#include <list>
+#include <vector>
 #include <string>
 //--------------------------------------------------- Interfaces utilisées
 #include "Empreinte.h"
@@ -42,11 +42,12 @@ public:
 	void AjouterEmpreinte(Empreinte emp);
 	string toString();
 	string getName()const;
+	vector <Empreinte> getListeEmpreintes() const;
 
 	////////////////////////////////////////////////////////////////// PRIVATE
 private:
 	//------------------------------------------------------ Attributs private
 	string Name;
-	list <Empreinte> ListeEmpreintes;
+	vector <Empreinte> ListeEmpreintes;
 };
 #endif
