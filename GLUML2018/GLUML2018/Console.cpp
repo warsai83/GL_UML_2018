@@ -50,7 +50,7 @@ ostream & debug (ostream & os){
  //      Ecrit les informations de débugage dans la console
 void Console::afficherDebug(string &info)
 {
-	cout << &Console::debug << info << &Console::raz << endl;
+	cout << debug << info << raz << endl;
 }//----- Fin de afficherDebug
 #endif
 
@@ -84,14 +84,14 @@ ostream & Console::raz (ostream & os){
 // Algorithme :
 //      Affiche le message d'erreur sur la console
 void Console::afficherErreur(const string &err){
-	cout << &Console::erreur << err << &Console::raz << endl;
+	cout << erreur << err << raz << endl;
 }//----- Fin de afficherErreur
 
 // afficherDanger(string danger)
 // Algorithme :
 //      Affiche le message d'avertissement sur la console
 void Console::afficherDanger(const string &danger) {
-	cout << &Console::attention << danger << &Console::raz << endl;
+	cout << attention << danger << raz << endl;
 }//----- Fin de afficherDanger
 
 // afficherDanger(string danger)
