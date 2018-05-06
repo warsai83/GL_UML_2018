@@ -2,7 +2,7 @@
 					Console  -  description
 		Classe permettant l'affichage sur la console de visual studio
 							-------------------
-	début                : 02-05-2018
+	dÃ©but                : 02-05-2018
 	copyright            : (C) 2018 par Halunka Matthieu, Mathilde Moureau
 										Stanley Cheah, William Occelli
     e-mail               : matthieu.halunka@insa-lyon.fr
@@ -16,12 +16,12 @@
 #define Console_H
 
 //------------------------------------------------------------------------
-// Rôle du module <Console>
-//	Permet d'utiliser la sortie console pour intérargir avec l'utilisateur
+// RÃ´le du module <Console>
+//	Permet d'utiliser la sortie console pour intÃ©rargir avec l'utilisateur
 //------------------------------------------------------------------------
 
 /////////////////////////////////////////////////////////////////  INCLUDE
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisÃ©es
 
 #include <iostream>
 #include <cstring>
@@ -35,7 +35,7 @@
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
-// type Nom ( liste de paramètres );
+// type Nom ( liste de paramÃ¨tres );
 // Mode d'emploi :
 //
 // Contrat :
@@ -44,21 +44,21 @@ class Console {
 
 #ifdef DEBUG
 	// ostream & debug ( ostream & os )
-	ostream & debug(ostream & os);
+	//ostream & debug(ostream & os);
 #endif
 
 	 // ostream & erreur ( ostream & os )
-	ostream & erreur(ostream & os);
+	/*ostream & erreur(ostream & os);
 
 	 // ostream & attention( ostream & os )
 	ostream & attention(ostream & os);
 
 	 // ostream & debug ( ostream & os )
-	ostream & raz(ostream & os);
+	ostream & raz(ostream & os);*/
 
 	//----------------------------------------------------------------- PUBLIC
 public:
-	//----------------------------------------------------- Méthodes publiques
+	//----------------------------------------------------- MÃ©thodes publiques
 
 #ifdef DEBUG
 	void afficherDebug(string &info);
@@ -83,19 +83,19 @@ public:
 
 	Console();
 	// Mode d'emploi :
-	//  Permet de créer l'objet et d'initialiser ses attributs.
+	//  Permet de crÃ©er l'objet et d'initialiser ses attributs.
 	// Contrat :
 	//	Aucun
 
 	virtual ~Console();
 	// Mode d'emploi :
-	//  Permet de détruire l'objet console.
+	//  Permet de dÃ©truire l'objet console.
 	// Contrat :
 	//  Aucun
 
 	//----------------------------------------------------- Attributs publiques
 
-	//----------------------------------------------------- Attributs protégés
+	//----------------------------------------------------- Attributs protÃ©gÃ©s
 protected:
 	/*ostream sortieConsole;
 	ostream erreurConsole;
