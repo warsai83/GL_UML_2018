@@ -14,6 +14,8 @@ e-mail               : $EMAIL$
 using namespace std;
 #include <iostream>
 #include <algorithm>
+#include <cstdlib>
+#include <cmath>
 
 //------------------------------------------------------ Include personnel
 #include "Gestion.h"
@@ -50,11 +52,15 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie> setMaladie, string nomMaladie)
 	vector<Empreinte> ListeEmpreintes;
 	return ListeEmpreintes;
 }
-set<Maladie> Gestion::analyseEmpreinte(vector<Empreinte> references, Empreinte e ) {
+
+set<Maladie> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, Empreinte& e ) {
 	set<Maladie> setMaladies;
 	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 		//TODO
-		if (true) {
+		double ecartMoyenne = (abs(e.A1 - i->A1)+ abs(e.A2 - i->A2)+ abs(e.A3 - i->A3)+ abs(e.A4 - i->A4)+ abs(e.AZ51 - i->AZ51))/5;
+		double ecartType = sqrt((pow(abs(e.A1 - i->A1)-ecartMoyenne,2) + pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
+			pow(abs(e.A3 - i->A3) - ecartMoyenne, 2) + pow(abs(e.A4 - i->A4) - ecartMoyenne, 2) + pow(abs(e.AZ51 - i->AZ51) - ecartMoyenne, 2)) / 5);
+		if (ecartMoyenne < 10 && ecartType < 3) {
 			setMaladies.insert(i->getDisease());
 		}
 	}

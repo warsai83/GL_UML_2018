@@ -32,7 +32,6 @@ william.occelli@insa-lyon.fr
 class Maladie
 {
 	//------------------------------------------------- Surcharge d'opérateurs
-	bool operator==(Maladie const &, Maladie const &);
 
 	//////////////////////////////////////////////////////////////////  PUBLIC
 public:
@@ -51,3 +50,5 @@ private:
 	vector <Empreinte> ListeEmpreintes;
 };
 #endif
+
+bool operator==(Maladie const &, Maladie const &);

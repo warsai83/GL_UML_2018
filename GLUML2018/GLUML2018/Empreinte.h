@@ -23,6 +23,7 @@ william.occelli@insa-lyon.fr
 using namespace std;
 #pragma once
 #include <string>
+#include <set>
 //--------------------------------------------------- Interfaces utilisées
 #include "Maladie.h"
 
@@ -38,6 +39,7 @@ public:
 	string toString();
 	Empreinte();
 	Empreinte(int, double, double, double, double, double, Maladie);
+	friend class Gestion;
 	~Empreinte();
 	Maladie getDisease() const;
 
