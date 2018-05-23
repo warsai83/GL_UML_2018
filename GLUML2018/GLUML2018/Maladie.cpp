@@ -61,7 +61,7 @@ string Maladie::toString()
 }
 
 //-------------------------------------------- Constructeurs - destructeur
-Maladie::Maladie()
+Maladie::Maladie(string name) : Name(name)
 {
 }
 

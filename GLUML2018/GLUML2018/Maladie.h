@@ -36,7 +36,7 @@ class Maladie
 	//////////////////////////////////////////////////////////////////  PUBLIC
 public:
 	//---------------------------------------------------- Fonctions publiques
-	Maladie();
+	Maladie(string name="");
 	~Maladie();
 	void AjouterEmpreinte(Empreinte emp);
 	string toString();
