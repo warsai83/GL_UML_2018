@@ -24,10 +24,15 @@ william.occelli@insa-lyon.fr
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
+#include "Console.h"
+#include "Maladie.h"
+#include "Gestion.h"
 using namespace std;
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
+set<Maladie> SETMALADIES;
+vector<Empreinte> EMPREINTES;
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
