@@ -37,22 +37,26 @@ string* SeparerString(string s, const char separateur=' ' )
 void initialiserEmpreintes()
 {
 	Maladie* mal1 = new Maladie("Rhume");
-	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, mal1 );
+	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, "Rhume" );
+	mal1->AjouterEmpreinte(*h1);
 	SETMALADIES.insert(*mal1);
 	EMPREINTES.assign(1,*h1);
 
 	Maladie* mal2 = new Maladie("Angine");
-	Empreinte* h2 = new Empreinte(2, false, 1.1, 14.3, 13.2, 2367, mal2);
+	Empreinte* h2 = new Empreinte(2, false, 1.1, 14.3, 13.2, 2367, "Angine");
+	mal2->AjouterEmpreinte(*h2);
 	SETMALADIES.insert(*mal2);
 	EMPREINTES.assign(1, *h2);
 
 	Maladie* mal3 = new Maladie("Grippe");
-	Empreinte* h3 = new Empreinte(3, 0, 12, 145, 12.1, 11, mal3);
+	Empreinte* h3 = new Empreinte(3, 0, 12, 145, 12.1, 11, "Grippe");
+	mal3->AjouterEmpreinte(*h3);
 	SETMALADIES.insert(*mal3);
 	EMPREINTES.assign(1, *h3);
 
 	Maladie* mal4 = new Maladie("Gastro");
-	Empreinte* h4 = new Empreinte(4, 2, 2.14, 20, 2.102, 1836, mal4);
+	Empreinte* h4 = new Empreinte(4, 2, 2.14, 20, 2.102, 1836, "Gastro");
+	mal4->AjouterEmpreinte(*h4);
 	SETMALADIES.insert(*mal4);
 	EMPREINTES.assign(1, *h4);
 
@@ -77,6 +81,9 @@ int main()
 		if (commande[0].compare("ANALYSE") == 0)
 		{
 			c->afficherMessage("Demande d'analyse ...");
+			string nomFichier = commande[1];
+			string res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
+			c->afficherMessage(res);
 		}
 		else if (commande[0].compare("LISTEMALADIES"))
 		{
@@ -95,9 +102,11 @@ int main()
 			string empreintes = g->AfficherEmpreinte(detailsMaladie);
 			c->afficherMessage(empreintes);
 		}
-		else if (commande[0].compare("CHARGER"))
+		else if (commande[0].compare("CHARGER")) // TODO ??????????? Quelle utilité ?
 		{
 			c->afficherMessage("Chargement du fichier ..");
+			string nomFichier = commande[1];
+			g.Charge
 		}
 		else
 		{
