@@ -5,11 +5,11 @@ empreintes lui correspondant
 -------------------
 début                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
-Stanley Cheah, William Occelli
+										Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
-mathilde.moureau@insa-lyon.fr
-stanley.cheah@insa-lyon.fr
-william.occelli@insa-lyon.fr
+						mathilde.moureau@insa-lyon.fr
+						stanley.cheah@insa-lyon.fr
+						william.occelli@insa-lyon.fr
 
 *************************************************************************/
 //---  Interface du module <Maladie> (fichier Maladie.h)--------

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Affichage.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Generateur.cpp" />
     <ClCompile Include="Empreinte.cpp" />
     <ClCompile Include="Formateur.cpp" />
     <ClCompile Include="Gestion.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="Empreinte.h" />
     <ClInclude Include="Formateur.h" />
     <ClInclude Include="Gestion.h" />
+    <ClInclude Include="Generateur.h" />
     <ClInclude Include="Lecture.h" />
     <ClInclude Include="Maladie.h" />
   </ItemGroup>
