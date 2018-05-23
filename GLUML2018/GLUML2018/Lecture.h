@@ -1,68 +1,123 @@
 /*************************************************************************
-                           Lecture -  description
-    Classe permettant de lire un fichier (log d'un serveur apache)
-    et d'invoquer un objet du type Formateur pour pouvoir extraire
-    les informations contenues dans chaque requêtes (/lignes).
-    Cela dans le but de pouvoir les exploiter avec l'outil Analog.
+                           Formateur -  description
+    Classe permettant de lire un fichier log d'un serveur apache
+    et d'en extraire les informations contenues dans chaque requêtes
+    afin de pouvoir les exploiter avec l'outil Analog.
                              -------------------
-    début                : 07-02-2018
-    copyright            : (C) 2018 par Halunka Matthieu, Augustin Bodet
-    e-mail               : matthieu.halunka@insa-lyon.fr
-                           augustin.bodet@insa-lyon.fr
+    début                : 02-05-2018
+    copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu, Moureau Mathilde, Occelli William 
+    e-mail               : stanley.cheah@insa-lyon.fr
+						   matthieu.halunka@insa-lyon.fr
+                           mathilde.moureau@insa-lyon.fr
+						   william.occelli@insa-lyon.fr
 *************************************************************************/
-//---------- Interface de la classe <Lecture> (fichier Lecture.h) ----------------
 
-#if ! defined ( LECTURE_H )
-#define LECTURE_H
+//---------- Réalisation de la classe <Generateur> (fichier Lecture.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
 
 using namespace std;
 #include <iostream>
-#include <string>
 #include <fstream>
-#include "Formateur.h"
+#include <string>
+#include <vector>
 
-//------------------------------------------------------------------------
-// Rôle de la classe <Lecture>
-//  Classe permettant d'ouvrir le fichier souhaité et se charge de le lire
-//  ligne par ligne à l'aide de la méthode Charger().
-//  L'appel de cette méthode conduit à transmettre la ligne lue
-//  à un objet du type Formateur afin d'extraire et
-//  de stocker les informations de la ligne lue.
-//------------------------------------------------------------------------
-
-class Lecture {
+//------------------------------------------------------ Include personnel
+#include "Lecture.h"
 //----------------------------------------------------------------- PUBLIC
-public:
+
 //----------------------------------------------------- Méthodes publiques
+// void Lecture::Charger ()
+// Algorithme :
+//      S'il est possible de lire une ligne du fichier,
+//          On lit la ligne, on regarde si on a atteint la fin du fichier
+//          Si on atteint la fin du fichier,
+//               on rend les lectures suivantes impossibles
+//          Fin SI
+//          On passe la ligne lue à la méthode Decouper de l'objet Decoupeur.
+//          On incrémente l'Indice pour connaître le nombre de lignes lues
+//          depuis le début de l'existance de notre objet.
+//      Fin SI
 
-    void Charger();
+/*void Lecture::Charger() {
+	vector<string> tabString;
+	string ligne;
+	while (getline(IfFichier, ligne))
+	{
+		tabString.push_back(ligne);
 
-//-------------------------------------------- Constructeurs - destructeur
+		cout << ligne << endl;
+
+	}
+
+	cout << ligne << endl;
+
+	vector<string>::iterator it = tabString.begin();
+	cout << "tabString contient:";
+	for (it = tabString.begin(); it<tabString.end(); it++)
+	{
+	cout << ' ' << *it <<endl;
+	}
+}//Fin de Charger*/
+
+void Lecture::Charger()
+{
+	cout <<"charger"<< endl;
+    	if (LecturePossible)
+	{
+		cout <<"if1"<< endl;
+		string ligne;
+		getline(IfFichier,ligne);
+		if (IfFichier.eof())
+		{
+			cout <<"if2"<< endl;
+			LecturePossible=false;
+		 	IfFichier.close();
+		    	return;
+        	}
+	cout <<"decoupeur"<< endl;
+	Decoupeur->Decouper(ligne);
+		Indice = Indice +1;
+	#ifdef DEBUG_LECTURE
+		cout <<"Ligne numéro "<< Indice << endl << ligne << endl;
+	#endif
+    	}
+}//Fin de Charger
 
 
-    Lecture (string fichier);
-    // Mode d'emploi :
-    //  Permet de créer l'objet et d'initialiser ses attributs.
-    //  Procède à l'ouverture du fichier pour le rendre prêt à la lecture.
-    // Contrat :
-    //  Le fichier à lire doit lisible, doit respecter un format
-    //  compréhensible et cohérent pour la classe Formateur.
-    //  Le fichier doit être correctement formée.
+Lecture::Lecture(string fichier) : IfFichier(fichier, ios::in) {
+	// Algorithme :
+	//  Crée l'ifstream associé au fichier à lire.
+	//  Regarde si la lecture est possible, si non, on renvoie une
+	//  erreur sur le terminal et on empêche la lecture.
+#ifdef MAP
+	cout << "Appel au constructeur de <Lecture>" << endl;
+#endif
+	nomFichier = fichier;
+	Indice = 0;
+	cout << "Appel au constructeur de <Lecture>" << endl;
+	Decoupeur = new Formateur();
+	cout << "Appel Decoupeur fini" << endl;
+	if (IfFichier.fail())
+	{
+		LecturePossible = false;
+		cerr << "Fichier introuvable ou impossible à ouvrir : " << nomFichier << endl;
+		IfFichier.close();
+	}
+	else
+	{
+		LecturePossible = true;
+	}
+}//----- Fin de Lecture
 
-    virtual ~Lecture();
-    // Mode d'emploi :
-    //  Permet de fermer le flux de lecture et de détruire l'objet Decoupeur.
-    // Contrat :
-    //  Aucun
 
-//----------------------------------------------------- Attributs publiques
-    bool LecturePossible;
-    int Indice;
-    ifstream IfFichier;
-    Formateur* Decoupeur;
-//----------------------------------------------------- Attributs protégés
-protected :
-    string nomFichier;
-};
-
-#endif // LECTURE_H
+Lecture::~Lecture() {
+	// Algorithme :
+	//  On supprime l'objet Decoupeur.
+#ifdef MAP
+	cout << "Appel au destructeur de <Lecture>" << endl;
+#endif
+	delete Decoupeur;
+}//----- Fin de ~Lecture
