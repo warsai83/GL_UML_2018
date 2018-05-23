@@ -47,7 +47,7 @@ public:
 	//  L'écriture au sein du fichier devra être possible.
 	void EcrireMaladie(const Maladie & maladie);
 
-	// void EcrireEmpreinte (const Empreinte & empreinte);
+	// void EcrireEmpreinte (Empreinte & empreinte);
 	// Mode d'emploi :
 	//  Permet d'écrire au sein du fichier, une empreinte
 	//	dans un format adéquat.
@@ -56,7 +56,7 @@ public:
 	//  assurer la cohérence.
 	//  Un lien devra relier deux noeuds existant dans le graphique.
 	//  L'écriture au sein du fichier devra être possible.
-	void EcrireEmpreinte(const Empreinte & empreinte);
+	void EcrireEmpreinte(Empreinte & empreinte);
 
 	//-------------------------------------------- Constructeurs - destructeur
 	Generateur(const Generateur & unGenerateur);
