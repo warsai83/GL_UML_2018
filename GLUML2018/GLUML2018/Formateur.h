@@ -18,6 +18,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <string>
+#include <vector>
 //------------------------------------------------------------------------
 // Rôle de la classe <Formateur>
 //      Permet de découper les requêtes provenant du log du serveur apache
@@ -39,7 +40,7 @@ public:
     // Contrat :
     //     La requête proposée en entrée sera supposé comme étant
     //     correctement formée et entière.
-    void Decouper(string ligneLue);
+    vector<vector<string>> Decouper(string ligneLue);
 
 //-------------------------------------------- Constructeurs - destructeur
     Formateur ( const Formateur & unFormateur );
@@ -61,17 +62,13 @@ public:
     // Contrat :
     //      Aucun
 
-    string IP;
-    string userLog;
-    string authUser;
-    string time;
-    string typeRequest;
-    string target;
-    string httpEnd;
-    string code;
-    string length;
-    string referer;
-    string idNav;
+    	string NoID;
+	string A1;
+	string A2;
+	string A3;
+	string A4;
+	string AZ51;
+	vector<vector<string>> tabEmp;
 
 };
 
