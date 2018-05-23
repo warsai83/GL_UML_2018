@@ -19,6 +19,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Gestion.h"
+#include "Lecture.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -53,8 +54,8 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie> setMaladie, string nomMaladie)
 	return ListeEmpreintes;
 }
 
-set<Maladie> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, Empreinte& e ) {
-	set<Maladie> setMaladies;
+set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, Empreinte& e ) {
+	set<string> setMaladies;
 	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 		//TODO
 		double ecartMoyenne = (abs(e.A1 - i->A1)+ abs(e.A2 - i->A2)+ abs(e.A3 - i->A3)+ abs(e.A4 - i->A4)+ abs(e.AZ51 - i->AZ51))/5;
@@ -65,6 +66,21 @@ set<Maladie> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, Empreinte&
 		}
 	}
 	return setMaladies;
+}
+
+vector<Empreinte> Gestion::LectureBase(string path) {
+	Lecture l (path);
+	vector<Empreinte> listeEmpreintes;
+	vector<string*> empreintes = l.Charger();
+	for (std::vector<string*>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
+		listeEmpreintes.push_back(stringToEmpreinte(*i));
+	}
+	return listeEmpreintes;
+}
+
+
+Empreinte Gestion::stringToEmpreinte(string* attributes) {
+	return Empreinte(stoi(attributes[0]), stod(attributes[1]), stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), stod(attributes[5]), attributes[6]);
 }
 
 //-------------------------------------------- Constructeurs - destructeur

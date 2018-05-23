@@ -27,7 +27,6 @@
     <ClCompile Include="Gestion.cpp" />
     <ClCompile Include="Lecture.cpp" />
     <ClCompile Include="Maladie.cpp" />
-    <ClCompile Include="MaladIF.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Affichage.h" />
@@ -38,7 +37,6 @@
     <ClInclude Include="Generateur.h" />
     <ClInclude Include="Lecture.h" />
     <ClInclude Include="Maladie.h" />
-    <ClInclude Include="MaladIF.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
