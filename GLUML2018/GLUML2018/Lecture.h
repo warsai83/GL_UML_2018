@@ -19,7 +19,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include <fstream>
-
+#include "Formateur.h"
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Lecture>
