@@ -45,7 +45,7 @@ public:
 	static vector<Empreinte> GetDetail(set<Maladie> setMaladie, string nomMaladie);
 	static set<string> AnalyseEmpreinte(vector<Empreinte>&,Empreinte& );
 	static vector<Empreinte> LectureBase(string);
-	static Empreinte stringToEmpreinte(string*);
+	static Empreinte stringToEmpreinte(vector<string>);
 
 
 
