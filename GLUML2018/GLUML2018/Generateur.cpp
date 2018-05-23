@@ -44,9 +44,12 @@ void Generateur::EcrireMaladie(const Maladie & maladie) {
 	if (EcriturePossible)
 	{
 		vector<Empreinte> tabEmpreinte = maladie.getListeEmpreintes();
-		
+		vector<Empreinte>::iterator it;
+		for (it = tabEmpreinte.begin(); it != tabEmpreinte.end(); ++it)
+		{
+			ecriture << it->toString<< endl;
+		}
 
-		//ecriture << << endl;
 #ifdef DEBUG
 		cout << "Ecriture du noeud " << id << " de nom " << url << endl;
 #endif
@@ -54,15 +57,14 @@ void Generateur::EcrireMaladie(const Maladie & maladie) {
 	return;
 }//----- Fin de EcrireNoeud
 
- // void Generateur::EcrireEmpreinte(const Empreinte & empreinte)
+ // void Generateur::EcrireEmpreinte(Empreinte & empreinte)
  // Algorithme :
  //              Ecrit l'empreinte corresondante si
  //              le fichier est accessible en écriture.
-void Generateur::EcrireEmpreinte(const Empreinte & empreinte) {
+void Generateur::EcrireEmpreinte(Empreinte & empreinte) {
 	if (EcriturePossible)
 	{
-		//ecriture << "node" << idRef << " -> node" << idCible;
-		//ecriture << " [label=" << '"' << occurence << '"' << "];" << endl;
+		ecriture << empreinte.toString() << endl;
 #ifdef DEBUG
 		cout << "Ecriture de lien " << idRef << " vers " << idCible << endl;
 #endif
