@@ -24,8 +24,8 @@ using namespace std;
 #pragma once
 #include <string>
 #include <set>
+#include <vector>
 //--------------------------------------------------- Interfaces utilisées
-#include "Maladie.h"
 
 //------------------------------------------------------------- Constantes
 

@@ -21,7 +21,7 @@ william.occelli@insa-lyon.fr
 
 string Empreinte::toString()
 {
-	string s = to_string(NoID) + ";" + to_string(A1) + ";" + to_string(A2) + ";" + to_string(A3) + ";" + to_string(A4) + ";" + to_string(AZ51) + ";" + Disease;
+	string s = to_string(NoID) + ";" + to_string(A1) + ";" + to_string(A2) + ";" + to_string(A3) + ";" + to_string(A4) + ";" + to_string(AZ51) + ";";
 	return s;
 }
 
@@ -37,7 +37,7 @@ Empreinte::Empreinte(int unNoID, double unA1, double unA2, double unA3, double u
 
 Empreinte::Empreinte()
 {
-	Disease = "";
+
 }
 
 Empreinte::Empreinte(const Empreinte & uneEmpreinte): NoID(uneEmpreinte.NoID), A1(uneEmpreinte.A1), A2(uneEmpreinte.A2), A3(uneEmpreinte.A3), A4(uneEmpreinte.A4), AZ51(uneEmpreinte.AZ51), Disease(uneEmpreinte.Disease)

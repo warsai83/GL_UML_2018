@@ -47,7 +47,7 @@ void Generateur::EcrireMaladie(const Maladie & maladie) {
 		vector<Empreinte>::iterator it;
 		for (it = tabEmpreinte.begin(); it != tabEmpreinte.end(); ++it)
 		{
-			ecriture << it->toString<< endl;
+			ecriture << it->toString() << endl;
 		}
 
 #ifdef DEBUG

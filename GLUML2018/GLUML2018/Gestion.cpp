@@ -31,14 +31,14 @@ using namespace std;
 //
 //{
 //} //----- Fin de Méthode
-string Gestion::AfficherEmpreinte(vector<Empreinte> listeEmpreinte) {
+string Gestion::AfficherEmpreinte(vector<Empreinte>& listeEmpreinte) {
 	string empreintes = "";
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
-		empreintes.append(i->toString + "\r\n");
+		empreintes.append(i->toString() + "\r\n");
 	}
 	return empreintes;
 }
-set<Maladie> Gestion::GetListeMaladie(vector<Empreinte> listeEmpreinte) {
+set<Maladie> Gestion::GetListeMaladie(vector<Empreinte>& listeEmpreinte) {
 	std::set<Maladie> setMaladie;
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 		for (std::vector<string>::iterator j = i->getDisease().begin(); j != i->getDisease().end(); j++) {
@@ -46,7 +46,7 @@ set<Maladie> Gestion::GetListeMaladie(vector<Empreinte> listeEmpreinte) {
 		}
 	}
 }
-vector<Empreinte> Gestion::GetDetail(set<Maladie> setMaladie, string nomMaladie) {
+vector<Empreinte> Gestion::GetDetail(set<Maladie>& setMaladie, string nomMaladie) {
 	for (std::set<Maladie>::iterator i = setMaladie.begin(); i != setMaladie.end(); i++) {
 		if (i->getName() == nomMaladie) {
 			return i->getListeEmpreintes();
@@ -57,7 +57,7 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie> setMaladie, string nomMaladie)
 }
 
 set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
-	Empreinte e = LectureBase(path).front;
+	Empreinte e = LectureBase(path).front();
 	set<string> setMaladies;
 	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 		//TODO
@@ -84,9 +84,9 @@ vector<Empreinte> Gestion::LectureBase(string path) {
 }
 
 
-Empreinte Gestion::stringToEmpreinte(vector<string> attributes) {
+Empreinte Gestion::stringToEmpreinte(vector<string>& attributes) {
 	vector<string> maladies;
-	if (attributes.size > 6) {
+	if (attributes.size() > 6) {
 		for (std::vector<string>::iterator i = attributes.begin()+6; i != attributes.end(); i++) {
 			maladies.push_back(*i);
 		}
