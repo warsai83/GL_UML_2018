@@ -89,9 +89,14 @@ int main()
 		{
 			c->afficherMessage("Affichage de la liste des maladies ...");
 			string maladies = "";
+			if (SETMALADIES.begin() == SETMALADIES.end())
+			{
+				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
+			}
 			for (std::set<Maladie>::iterator i = SETMALADIES.begin(); i != SETMALADIES.end(); i++) {
 				maladies.append(i->toString + "\r\n");
 			}
+			
 			c->afficherMessage(maladies);
 		}
 		else if (commande[0].compare("DETAILSMALADIE"))
