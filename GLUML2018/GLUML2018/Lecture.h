@@ -35,7 +35,7 @@ class Lecture {
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    void Charger();
+    vector<vector<string>> Charger();
 
 //-------------------------------------------- Constructeurs - destructeur
 
@@ -60,6 +60,7 @@ public:
     int Indice;
     ifstream IfFichier;
     Formateur* Decoupeur;
+	vector<vector<string>> tabEmp;
 //----------------------------------------------------- Attributs protégés
 protected :
     string nomFichier;

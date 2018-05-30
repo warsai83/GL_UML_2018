@@ -29,61 +29,36 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-// void Lecture::Charger ()
-// Algorithme :
-//      S'il est possible de lire une ligne du fichier,
-//          On lit la ligne, on regarde si on a atteint la fin du fichier
-//          Si on atteint la fin du fichier,
-//               on rend les lectures suivantes impossibles
-//          Fin SI
-//          On passe la ligne lue à la méthode Decouper de l'objet Decoupeur.
-//          On incrémente l'Indice pour connaître le nombre de lignes lues
-//          depuis le début de l'existance de notre objet.
-//      Fin SI
 
-/*void Lecture::Charger() {
-	vector<string> tabString;
-	string ligne;
-	while (getline(IfFichier, ligne))
-	{
-		tabString.push_back(ligne);
 
-		cout << ligne << endl;
-
-	}
-
-	cout << ligne << endl;
-
-	vector<string>::iterator it = tabString.begin();
-	cout << "tabString contient:";
-	for (it = tabString.begin(); it<tabString.end(); it++)
-	{
-	cout << ' ' << *it <<endl;
-	}
-}//Fin de Charger*/
-
-void Lecture::Charger()
+vector<vector<string>> Lecture::Charger()
 {
-	cout <<"charger"<< endl;
-    	if (LecturePossible)
+	string ligne;
+	while(getline(IfFichier,ligne))
 	{
-		cout <<"if1"<< endl;
-		string ligne;
-		getline(IfFichier,ligne);
-		if (IfFichier.eof())
-		{
-			cout <<"if2"<< endl;
-			LecturePossible=false;
-		 	IfFichier.close();
-		    	return;
-        	}
-	cout <<"decoupeur"<< endl;
-	Decoupeur->Decouper(ligne);
-		Indice = Indice +1;
-	#ifdef DEBUG_LECTURE
-		cout <<"Ligne numéro "<< Indice << endl << ligne << endl;
-	#endif
+	tabEmp=Decoupeur->Decouper(ligne);
+	Indice = Indice +1;
+	
+	/* //AFFICHAGE DU GROS TABLEAU
+	for(vector<string> vLigne:tabEmp)
+	{
+		//vector<string> vLigne = tabEmp[i];
+		for(string s: vLigne) {
+			cout << s << endl;
+		}	
+	} */
+	
+	/*vector<string> vLigne = tabEmp[0];
+	cout <<vLigne[0]<<endl;
+	vector<string> vLigne1 = tabEmp[1];
+	cout <<vLigne1[0]<<endl;*/
+	
+	/*
+	cout <<&tabEmp[0][0]<<endl;
+	cout <<&tabEmp[1][2]<<endl;*/
+	//cout <<"Ligne numéro "<< Indice << endl << ligne << endl;
     	}
+    	return tabEmp;
 }//Fin de Charger
 
 
@@ -100,6 +75,7 @@ Lecture::Lecture(string fichier) : IfFichier(fichier, ios::in) {
 	cout << "Appel au constructeur de <Lecture>" << endl;
 	Decoupeur = new Formateur();
 	cout << "Appel Decoupeur fini" << endl;
+	
 	if (IfFichier.fail())
 	{
 		LecturePossible = false;
