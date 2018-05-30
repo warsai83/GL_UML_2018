@@ -56,7 +56,8 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie> setMaladie, string nomMaladie)
 	return ListeEmpreintes;
 }
 
-set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, Empreinte& e ) {
+set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
+	Empreinte e = LectureBase(path).front;
 	set<string> setMaladies;
 	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 		//TODO
