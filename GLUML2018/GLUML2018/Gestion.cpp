@@ -62,8 +62,8 @@ set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path
 	set<string> setMaladies;
 	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 		//TODO
-		double ecartMoyenne = (abs(e.A1 - i->A1)+ abs(e.A2 - i->A2)+ abs(e.A3 - i->A3)+ abs(e.A4 - i->A4)+ abs(e.AZ51 - i->AZ51))/5;
-		double ecartType = sqrt((pow(abs(e.A1 - i->A1)-ecartMoyenne,2) + pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
+		double ecartMoyenne = (abs(e.A2 - i->A2)+ abs(e.A3 - i->A3)+ abs(e.A4 - i->A4)+ abs(e.AZ51 - i->AZ51))/5;
+		double ecartType = sqrt((pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
 			pow(abs(e.A3 - i->A3) - ecartMoyenne, 2) + pow(abs(e.A4 - i->A4) - ecartMoyenne, 2) + pow(abs(e.AZ51 - i->AZ51) - ecartMoyenne, 2)) / 5);
 		if (ecartMoyenne < 10 && ecartType < 3) {
 			for (std::vector<string>::iterator j = i->getDisease().begin(); j != i->getDisease().end(); j++) {
