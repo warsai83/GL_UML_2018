@@ -76,12 +76,11 @@ int main()
 
 		c->afficherMessage(" Saisir une action à effectuer : \r\n");
 		string commandeUtilisateur = c->lireChaine();
-		string res;
-		string* commande =&res;
+		string commande[2] ;
 		SeparerString(commande,&commandeUtilisateur);
 
 		//debug ----------
-		cout << "res 0 : " << commande[0] << endl << "res 1  : " << commande[1];
+		cout << "res 0 : " << commande[0] << endl << "res 1  : " << commande[1] << "\r\n";
 
 		//-----------
 		if (commande[0].compare("ANALYSE") == 0)
@@ -117,6 +116,13 @@ int main()
 			/*vector<Empreinte> detailsMaladie = g.getDetails(SETMALADIES, maladie);
 			string empreintes = g->AfficherEmpreinte(detailsMaladie);
 			c->afficherMessage(empreintes);*/
+		}
+		else if (commande[0].compare("LOAD"))
+		{
+			c->afficherMessage("Chargement de BD...");
+			string nomFichier = "./" + commande[1];
+			EMPREINTES = Gestion::LectureBase(commande[1]);
+			cout << Gestion::AfficherEmpreinte(EMPREINTES);
 		}
 		else
 		{
