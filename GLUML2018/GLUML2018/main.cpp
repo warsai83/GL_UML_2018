@@ -29,9 +29,10 @@ int main()
 
 	//TEST Gestion Lecture
 
-	vector<Empreinte> ListeEmpreinte = Gestion.LectureBase("empreinte_texte.txt");
-	cout << Gestion.AfficherEmpreinte(ListeEmpreinte);
-
+	vector<Empreinte> ListeEmpreinte = Gestion::LectureBase("empreinte_texte.txt");
+	cout << Gestion::AfficherEmpreinte(ListeEmpreinte);
+	int a;
+	cin >> a; 
 	/*Lecture * maLecture = new Lecture("empreinte_texte.txt");
 	maLecture->Charger();
 	int a;

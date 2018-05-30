@@ -79,7 +79,7 @@ Formateur::Formateur ( const Formateur & unFormateur )
 // Algorithme :
 //      Copie la valeur de chaque attributs dans le nouvel objet
 {
-#ifdef MAP
+#ifdef MAP 
     cout << "Appel au constructeur de copie de <Formateur>" << endl;
 #endif
     	NoID=unFormateur.NoID;
