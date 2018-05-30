@@ -40,7 +40,7 @@ const char RESET [] = {033,'[','m',017};
  // afficherDebug(string info)
  // Algorithme :
  //      Ecrit les informations de débugage dans la console
-void Console::afficherDebug(string &info)
+void Console::afficherDebug(const string &info)
 {
 	cout << debug << info << raz << endl;
 }//----- Fin de afficherDebug
@@ -191,7 +191,7 @@ ostream & Console::raz (ostream & os){
 // ostream & debug ( ostream & os )
 // Algorithme :
 //      Change les paramètres du ostream pour qu'il écrive en bleu.
-ostream & debug (ostream & os){
+ostream & Console::debug (ostream & os){
     os.write(BLEU, sizeof(BLEU));
     return os;
 }//----- Fin de debug

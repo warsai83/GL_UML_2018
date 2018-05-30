@@ -81,7 +81,7 @@ int main()
 
 #ifdef DEBUG
 		c->afficherDebug("res 0 : "+commande[0]);
-		c->afficherDebug("res 1  : " << commande[1]);
+		c->afficherDebug("res 1  : "+commande[1]);
 #endif
 		//-----------
 		if (commande[0]=="ANALYSE")

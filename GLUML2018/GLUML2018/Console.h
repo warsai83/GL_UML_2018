@@ -61,7 +61,7 @@ public:
 	//----------------------------------------------------- Méthodes publiques
 
 #ifdef DEBUG
-	void afficherDebug(string &info);
+	void afficherDebug(const string &info);
 #endif
 
 	void afficherErreur(const string &err);
