@@ -27,7 +27,7 @@ string Empreinte::toString()
 	return s;
 }
 
-vector<string> Empreinte::getDisease() const {
+vector<string> Empreinte::getDisease() const{
 	return Disease;
 }
 

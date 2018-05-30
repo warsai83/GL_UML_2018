@@ -69,7 +69,6 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 int main()
 {
 	//initialiserEmpreintes();
-	Gestion* g = new Gestion();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	bool continuer=true;
 	while (continuer)
@@ -88,7 +87,7 @@ int main()
 		{
 			c->afficherMessage("Demande d'analyse ...");
 			string nomFichier = "./"+commande[1];
-			set<string> res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
+			set<string> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
 			for (std::set<string>::iterator it = res.begin(); it != res.end(); it++)
 			{
 				c->afficherMessage(*it);
@@ -98,24 +97,23 @@ int main()
 		else if (commande[0]=="LISTEMALADIES")
 		{
 			c->afficherMessage("Affichage de la liste des maladies ...");
-			string maladies = "";
-			if (SETMALADIES.begin() == SETMALADIES.end())
+			/*if (SETMALADIES.begin() == SETMALADIES.end())
 			{
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
+			}*/
+			set<string> maladiesConnues;
+			cout << Gestion::AfficherEmpreinte(EMPREINTES);
+			maladiesConnues = Gestion::GetListeMaladie(EMPREINTES, maladiesConnues);
+			for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
+				c->afficherMessage(*it + "\r\n");
 			}
-			set<Maladie> maladiesConnues;
-			maladiesConnues = g->GetListeMaladie(EMPREINTES, maladiesConnues);
-			for (std::set<Maladie>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
-				maladies.append(it->getName() + "\r\n");
-			}
-			c->afficherMessage(maladies);
 		}
 		else if (commande[0]=="DETAILSMALADIE")
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
 			string maladie = commande[1];
-			/*vector<Empreinte> detailsMaladie = g.getDetails(SETMALADIES, maladie);
-			string empreintes = g->AfficherEmpreinte(detailsMaladie);
+			/*vector<Empreinte> detailsMaladie = Gestion::getDetails(SETMALADIES, maladie);
+			string empreintes = Gestion::AfficherEmpreinte(detailsMaladie);
 			c->afficherMessage(empreintes);*/
 		}
 		else if (commande[0] == "LOAD")
