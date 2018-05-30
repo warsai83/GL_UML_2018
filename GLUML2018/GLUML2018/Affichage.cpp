@@ -37,25 +37,29 @@ string* SeparerString(string s, const char separateur=' ' )
 void initialiserEmpreintes()
 {
 	Maladie* mal1 = new Maladie("Rhume");
-	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, "Rhume" );
+	string s = "Rhume";
+	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, s );
 	mal1->AjouterEmpreinte(*h1);
 	SETMALADIES.insert(*mal1);
 	EMPREINTES.assign(1,*h1);
 
 	Maladie* mal2 = new Maladie("Angine");
-	Empreinte* h2 = new Empreinte(2, false, 1.1, 14.3, 13.2, 2367, "Angine");
+	s = "Angine";
+	Empreinte* h2 = new Empreinte(2, false, 1.1, 14.3, 13.2, 2367, s);
 	mal2->AjouterEmpreinte(*h2);
 	SETMALADIES.insert(*mal2);
 	EMPREINTES.assign(1, *h2);
 
 	Maladie* mal3 = new Maladie("Grippe");
-	Empreinte* h3 = new Empreinte(3, 0, 12, 145, 12.1, 11, "Grippe");
+	s = "Grippe";
+	Empreinte* h3 = new Empreinte(3, 0, 12, 145, 12.1, 11, s);
 	mal3->AjouterEmpreinte(*h3);
 	SETMALADIES.insert(*mal3);
 	EMPREINTES.assign(1, *h3);
 
 	Maladie* mal4 = new Maladie("Gastro");
-	Empreinte* h4 = new Empreinte(4, 2, 2.14, 20, 2.102, 1836, "Gastro");
+	s = "Gastro";
+	Empreinte* h4 = new Empreinte(4, 2, 2.14, 20, 2.102, 1836, s);
 	mal4->AjouterEmpreinte(*h4);
 	SETMALADIES.insert(*mal4);
 	EMPREINTES.assign(1, *h4);
