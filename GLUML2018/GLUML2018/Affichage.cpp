@@ -33,6 +33,7 @@ void SeparerString(string* result, string* s, const char separateur=' ')
     result[1] = s->substr(pos1 + 1, s->length());
 }
 
+
 /*void initialiserEmpreintes()
 {
 	Maladie* mal1 = new Maladie("Rhume");
@@ -76,7 +77,9 @@ int main()
 
 		c->afficherMessage(" Saisir une action à effectuer : \r\n");
 		string commandeUtilisateur = c->lireChaine();
-		string* commande = SeparerString(commandeUtilisateur);
+		string res;
+		string* commande =&res;
+		SeparerString(commande,&commandeUtilisateur);
 
 		//debug ----------
 		cout << "res 0 : " << commande[0] << endl << "res 1  : " << commande[1];
