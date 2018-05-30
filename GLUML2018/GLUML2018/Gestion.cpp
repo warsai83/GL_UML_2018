@@ -20,10 +20,11 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Gestion.h"
 #include "Lecture.h"
-
+#include "Console.h
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
+extern Console* c;
 
 //----------------------------------------------------- Méthodes publiques
 // type Gestion::Méthode ( liste des paramètres )
@@ -102,7 +103,7 @@ Gestion::Gestion()
 //
 {
 #ifdef MAP
-	cout << "Appel au constructeur de <Gestion>" << endl;
+	c->afficherMessage("Appel au constructeur de <Gestion>");
 #endif
 } //----- Fin de Gestion
 
@@ -112,7 +113,7 @@ Gestion::~Gestion()
 //
 {
 #ifdef MAP
-	cout << "Appel au destructeur de <Gestion>" << endl;
+	c->afficherMessage("Appel au destructeur de <Gestion>");
 #endif
 } //----- Fin de ~Gestion
 
