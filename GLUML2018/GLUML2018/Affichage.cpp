@@ -118,6 +118,13 @@ int main()
 			string empreintes = g->AfficherEmpreinte(detailsMaladie);
 			c->afficherMessage(empreintes);*/
 		}
+		else if (commande[0] == "LOAD")
+		{
+			c->afficherMessage("Chargement de BD...");
+			string nomFichier = "./" + commande[1];
+			EMPREINTES = Gestion::LectureBase(commande[1]);
+			cout << Gestion::AfficherEmpreinte(EMPREINTES);
+		}
 		else
 		{
 			c->afficherDanger("Commande inconnue");
