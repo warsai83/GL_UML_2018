@@ -27,6 +27,7 @@
 //------------------------------------------------------ Include personnel
 #include "Console.h"
 
+using namespace std;
 //------------------------------------------------------------- Constantes
 const char BLEU [] = {033,'[','3','4','m'};
 const char ROUGE [] = {033,'[','3','1','m'};
