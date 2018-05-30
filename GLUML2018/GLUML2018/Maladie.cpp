@@ -38,6 +38,16 @@ bool operator==(Maladie const &M1, Maladie const &M2)
 	}
 }
 
+bool operator<(Maladie const &M1, Maladie const &M2)
+{
+	return (M1.getName() < M2.getName());
+}
+
+bool operator>(Maladie const &M1, Maladie const &M2)
+{
+	return (M1.getName() > M2.getName());
+}
+
 string Maladie::getName() const
 {
 	return Name;

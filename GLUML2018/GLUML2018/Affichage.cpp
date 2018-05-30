@@ -70,7 +70,7 @@ string* SeparerString(string s, const char separateur=' ')
 }*/
 int main()
 {
-	initialiserEmpreintes();
+	//initialiserEmpreintes();
 	Gestion* g = new Gestion();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	while (true)
