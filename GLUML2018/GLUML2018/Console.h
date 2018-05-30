@@ -23,7 +23,6 @@ using namespace std;
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
-
 #include <iostream>
 #include <cstring>
 #include <string>

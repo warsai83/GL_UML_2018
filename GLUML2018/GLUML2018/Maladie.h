@@ -52,3 +52,5 @@ private:
 #endif
 
 bool operator==(Maladie const &, Maladie const &);
+bool operator<(Maladie const &M1, Maladie const &M2);
+bool operator>(Maladie const &M1, Maladie const &M2);
