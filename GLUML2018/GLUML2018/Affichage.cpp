@@ -25,13 +25,11 @@ william.occelli@insa-lyon.fr
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-string* SeparerString(string s, const char separateur=' ')
+void SeparerString(string* result, string* s, const char separateur=' ')
 {
-	string res[2];
-	size_t pos1 = s.find(separateur);
-	res[0] = s.substr(0, pos1);
-	res[1] = s.substr(pos1 + 1, s.length());
-	return res;
+	size_t pos1 = s->find(separateur);
+	result[0] = s->substr(0, pos1);
+    result[1] = s->substr(pos1 + 1, s->length());
 }
 
 /*void initialiserEmpreintes()
