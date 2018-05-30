@@ -123,6 +123,10 @@ int main()
 			EMPREINTES = Gestion::LectureBase(commande[1]);
 			cout << Gestion::AfficherEmpreinte(EMPREINTES);
 		}
+		else if (commande[0] == "QUITTER")
+		{
+			continuer = false;
+		}
 		else
 		{
 			c->afficherDanger("Commande inconnue");
