@@ -34,10 +34,12 @@ string* SeparerString(string s, const char separateur=' ' )
 	return res;
 }
 
-void initialiserEmpreintes()
+/*void initialiserEmpreintes()
 {
 	Maladie* mal1 = new Maladie("Rhume");
-	string s = "Rhume";
+	vector<string>  s;
+	string mal = "Rhume";
+	s.assign(mal);
 	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, s );
 	mal1->AjouterEmpreinte(*h1);
 	SETMALADIES.insert(*mal1);
@@ -64,7 +66,7 @@ void initialiserEmpreintes()
 	SETMALADIES.insert(*mal4);
 	EMPREINTES.assign(1, *h4);
 
-}
+}*/
 int main()
 {
 	initialiserEmpreintes();

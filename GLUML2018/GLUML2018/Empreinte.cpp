@@ -40,7 +40,7 @@ Empreinte::Empreinte()
 
 }
 
-Empreinte::Empreinte(const Empreinte & uneEmpreinte): NoID(uneEmpreinte.NoID), A1(uneEmpreinte.A1), A2(uneEmpreinte.A2), A3(uneEmpreinte.A3), A4(uneEmpreinte.A4), AZ51(uneEmpreinte.AZ51), Disease(uneEmpreinte.Disease)
+Empreinte::Empreinte(const Empreinte & uneEmpreinte): NoID(uneEmpreinte.NoID), A1(uneEmpreinte.A1), A2(uneEmpreinte.A2), A3(uneEmpreinte.A3), A4(uneEmpreinte.A4), AZ51(uneEmpreinte.AZ51), Disease(uneEmpreinte.getDisease())
 {
 
 }
