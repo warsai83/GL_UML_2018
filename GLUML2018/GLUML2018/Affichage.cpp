@@ -22,10 +22,11 @@ william.occelli@insa-lyon.fr
 #include "Affichage.h"
 
 //------------------------------------------------------------- Constantes
-
 //----------------------------------------------------------------- PUBLIC
+
+static Console* c = new Console();
 //----------------------------------------------------- Méthodes publiques
-string* SeparerString(string s, const char separateur=' ' )
+string* SeparerString(string s, const char separateur=' ')
 {
 	string res[2];
 	size_t pos1 = s.find(separateur);
@@ -68,7 +69,6 @@ void initialiserEmpreintes()
 int main()
 {
 	initialiserEmpreintes();
-	Console* c = new Console();
 	Gestion* g = new Gestion();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	while (true)
@@ -100,16 +100,16 @@ int main()
 			for (std::set<Maladie>::iterator i = SETMALADIES.begin(); i != SETMALADIES.end(); i++) {
 				maladies.append(i->toString + "\r\n");
 			}
-			
+
 			c->afficherMessage(maladies);
 		}
 		else if (commande[0].compare("DETAILSMALADIE"))
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
 			string maladie = commande[1];
-			vector<Empreinte> detailsMaladie = g.getDetails(SETMALADIES, maladie);
+			/*vector<Empreinte> detailsMaladie = g.getDetails(SETMALADIES, maladie);
 			string empreintes = g->AfficherEmpreinte(detailsMaladie);
-			c->afficherMessage(empreintes);
+			c->afficherMessage(empreintes);*/
 		}
 		else
 		{

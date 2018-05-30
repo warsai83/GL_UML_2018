@@ -15,6 +15,7 @@
 #if ! defined ( Console_H )
 #define Console_H
 
+using namespace std;
 //------------------------------------------------------------------------
 // Rôle du module <Console>
 //	Permet d'utiliser la sortie console pour intérargir avec l'utilisateur
