@@ -79,14 +79,24 @@ int main()
 		string commande[2] ;
 		SeparerString(commande,&commandeUtilisateur);
 
-		//debug ----------
-		cout << "res 0 : " << commande[0] << endl << "res 1  : " << commande[1] << "\r\n";
-
+#ifdef DEBUG
+		c->afficherDebug("res 0 : "+commande[0]);
+		c->afficherDebug("res 1  : " << commande[1]);
+#endif
 		//-----------
 		if (commande[0]=="ANALYSE")
 		{
 			c->afficherMessage("Demande d'analyse ...");
+
+
+			// VISUAL STUDIO
 			string nomFichier = "./"+commande[1];
+
+
+			// CLION
+			//string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
+
+
 			set<string> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
 			for (std::set<string>::iterator it = res.begin(); it != res.end(); it++)
 			{
