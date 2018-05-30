@@ -88,8 +88,12 @@ int main()
 		{
 			c->afficherMessage("Demande d'analyse ...");
 			string nomFichier = "./"+commande[1];
-			string res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
-			c->afficherMessage(res);
+			set<string> res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
+			for (std::set<string>::iterator it = res.begin(); it != res.end(); it++)
+			{
+				c->afficherMessage(*it);
+			}
+			
 		}
 		else if (commande[0].compare("LISTEMALADIES"))
 		{
