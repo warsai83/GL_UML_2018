@@ -29,7 +29,7 @@ e-mail               : matthieu.halunka@insa-lyon.fr
 #include "Gestion.h"
 using namespace std;
 //------------------------------------------------------------- Constantes
-
+Console* c = new Console();
 //------------------------------------------------------------------ Types
 set<Maladie> SETMALADIES;
 vector<Empreinte> EMPREINTES;
@@ -61,5 +61,7 @@ public:
 
 	//----------------------------------------------------- Attributs protégés
 };
+
+
 #endif // Affichage_H
 

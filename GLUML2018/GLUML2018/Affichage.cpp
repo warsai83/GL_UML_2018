@@ -24,7 +24,6 @@ william.occelli@insa-lyon.fr
 //------------------------------------------------------------- Constantes
 //----------------------------------------------------------------- PUBLIC
 
-static Console* c = new Console();
 //----------------------------------------------------- Méthodes publiques
 string* SeparerString(string s, const char separateur=' ')
 {
@@ -103,7 +102,8 @@ int main()
 			{
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}
-			set<Maladie> maladiesConnues = g->GetListeMaladie(EMPREINTES);
+			set<Maladie> maladiesConnues;
+			maladiesConnues = g->GetListeMaladie(EMPREINTES, maladiesConnues);
 			for (std::set<Maladie>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
 				maladies.append(it->getName() + "\r\n");
 			}
