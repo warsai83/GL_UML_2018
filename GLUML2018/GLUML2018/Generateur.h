@@ -52,9 +52,6 @@ public:
 	//  Permet d'écrire au sein du fichier, une empreinte
 	//	dans un format adéquat.
 	// Contrat :
-	//  L'ensemble des liens seront construit après les noeuds pour
-	//  assurer la cohérence.
-	//  Un lien devra relier deux noeuds existant dans le graphique.
 	//  L'écriture au sein du fichier devra être possible.
 	void EcrireEmpreinte(Empreinte & empreinte);
 

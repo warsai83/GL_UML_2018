@@ -121,9 +121,9 @@ int main()
 		else if (commande[0] == "LOAD")
 		{
 			c->afficherMessage("Chargement de BD...");
-			/*string nomFichier = "./" + commande[1];
+			string nomFichier = "./" + commande[1];
 			EMPREINTES = Gestion::LectureBase(commande[1]);
-			cout << Gestion::AfficherEmpreinte(EMPREINTES);*/
+			cout << Gestion::AfficherEmpreinte(EMPREINTES);
 		}
 		else if (commande[0]=="QUITTER")
 		{
