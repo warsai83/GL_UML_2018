@@ -103,10 +103,10 @@ int main()
 			{
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}
-			for (std::set<Maladie>::iterator i = SETMALADIES.begin(); i != SETMALADIES.end(); i++) {
-				maladies.append(i->toString + "\r\n");
+			set<Maladie> maladiesConnues = g->GetListeMaladie(EMPREINTES);
+			for (std::set<Maladie>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
+				maladies.append(it->getName() + "\r\n");
 			}
-
 			c->afficherMessage(maladies);
 		}
 		else if (commande[0].compare("DETAILSMALADIE"))
