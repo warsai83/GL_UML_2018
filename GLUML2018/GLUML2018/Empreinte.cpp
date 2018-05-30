@@ -1,9 +1,9 @@
 /*************************************************************************
 Empreinte  -  description
-Classe représentant l'objet Empreinte qui possède les caractéristiques du
-patient en attributs ainsi que la maladie diagnostiquée
+Classe reprï¿½sentant l'objet Empreinte qui possï¿½de les caractï¿½ristiques du
+patient en attributs ainsi que la maladie diagnostiquï¿½e
 -------------------
-début                :	02-05-2018
+dï¿½but                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
 Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
@@ -13,11 +13,13 @@ william.occelli@insa-lyon.fr
 
 *************************************************************************/
 
-//--- Réalisation de la classe <Empreinte> (fichier Empreinte.cpp)--------
+//--- Rï¿½alisation de la classe <Empreinte> (fichier Empreinte.cpp)--------
 
 //---------------------------------------------------------------- INCLUDE
 #include "Empreinte.h"
-
+#include "Console.h"
+//----------------------------------------------------------------- PUBLIC
+extern Console* c;
 
 string Empreinte::toString()
 {
@@ -32,21 +34,30 @@ vector<string> Empreinte::getDisease() const {
 //-------------------------------------------- Constructeurs - destructeur
 Empreinte::Empreinte(int unNoID, string unA1, double unA2, double unA3, double unA4, double unAZ51, vector<string> Diseases) : NoID(unNoID), A1(unA1), A2(unA2), A3(unA3), A4(unA4), AZ51(unAZ51), Disease(Diseases)
 {
-
+#ifdef MAP
+	c->afficherMessage("Appel au constructeur de <Empreinte>");
+#endif
 }
 
 Empreinte::Empreinte()
 {
-
+#ifdef MAP
+	c->afficherMessage("Appel au constructeur vide de <Empreinte>");
+#endif
 }
 
 Empreinte::Empreinte(const Empreinte & uneEmpreinte): NoID(uneEmpreinte.NoID), A1(uneEmpreinte.A1), A2(uneEmpreinte.A2), A3(uneEmpreinte.A3), A4(uneEmpreinte.A4), AZ51(uneEmpreinte.AZ51), Disease(uneEmpreinte.getDisease())
 {
-
+#ifdef MAP
+	c->afficherMessage("Appel au constructeur de copie de <Empreinte>");
+#endif
 }
 
 Empreinte::~Empreinte()
 {
+#ifdef MAP
+	c->afficherMessage("Appel au destructeur de <Empreinte>");
+#endif
 }
 
 

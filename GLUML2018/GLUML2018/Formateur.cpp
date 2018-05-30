@@ -26,10 +26,11 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Formateur.h"
-
+#include "Console.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
+extern Console* c;
 
 //----------------------------------------------------- Méthodes publiques
 // void Formateur::Decouper(string ligneLue="")
@@ -96,7 +97,7 @@ Formateur::Formateur ()
 //      Initialise les attributs de notre objet
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Formateur>" << endl;
+    c->afficherMessage("Appel au constructeur de <Formateur>");
 #endif
 	
 	NoID="";
@@ -113,6 +114,6 @@ Formateur::~Formateur ( )
 //      Aucun
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Formateur>" << endl;
+    c->afficherMessage("Appel au destructeur de <Formateur>");
 #endif
 } //----- Fin de ~Formateur
