@@ -1,10 +1,9 @@
 /*************************************************************************
 Main -  description
-test méthode lecture
+test mÃ©thode lecture
 -------------------
-début                : 02-05-2018
+dÃ©but                : 02-05-2018
 copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu, Moureau Mathilde, Occelli William
-
 e-mail               : stanley.cheah@insa-lyon.fr
 						matthieu.halunka@insa-lyon.fr
 						mathilde.moureau@insa-lyon.fr
@@ -17,16 +16,16 @@ using namespace std;
 #include <cstring>
 #include <sstream>
 #include <string>
-#include "Console.h"
 #include "Lecture.h"
 
 int main()
 {
-	/*Lecture * maLecture = new Lecture("empreinte_texte.txt");
+	Lecture * maLecture = new Lecture("empreinte_texte.txt");
+	cout<< "construc"<<endl;
 	maLecture->Charger();
-	int a;
-	cin >> a;*/
+	delete maLecture;
 
+/*
 	//TEST Console.cpp
 	Console* c = new Console();
 	c->afficherMessage("Ceci est un message");
@@ -35,6 +34,6 @@ int main()
 	string s = c->lireChaine();
 	int i = c->lireEntier();
 	cout << s << endl;
-	cout << i << endl;
+	cout << i << endl;*/
 	return 0;
 }
