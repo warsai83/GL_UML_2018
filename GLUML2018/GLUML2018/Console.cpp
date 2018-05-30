@@ -18,7 +18,6 @@
 
 //-------------------------------------------------------- Include système
 
-using namespace std;
 #include <iostream>
 #include <cstring>
 #include <fstream>
@@ -28,6 +27,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Console.h"
 
+using namespace std;
 //------------------------------------------------------------- Constantes
 const char BLEU [] = {033,'[','3','4','m'};
 const char ROUGE [] = {033,'[','3','1','m'};
@@ -83,7 +83,7 @@ ostream & Console::raz (ostream & os){
 // afficherErreur(string err)
 // Algorithme :
 //      Affiche le message d'erreur sur la console
-void Console::afficherErreur(const string &err){
+void Console::afficherErreur(const stdin::string &err){
 	cout << erreur << err << raz << endl;
 }//----- Fin de afficherErreur
 

@@ -33,7 +33,7 @@ using namespace std;
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
-
+extern Console* c;
 //----------------------------------------------------- Méthodes publiques
 // void Generateur::EcrireMaladie (const Maladie & maladie)
 // Algorithme :
@@ -66,7 +66,9 @@ void Generateur::EcrireEmpreinte(Empreinte & empreinte) {
 	{
 		ecriture << empreinte.toString() << endl;
 #ifdef DEBUG
-		cout << "Ecriture de lien " << idRef << " vers " << idCible << endl;
+		stringstream message;
+		message<<"Ecriture de lien " << idRef << " vers " << idCible;
+		c->afficherDebug(message.str());
 #endif
 	}
 	return;
@@ -87,7 +89,7 @@ Generateur::Generateur(const Generateur & unGenerateur) :nomFichier(unGenerateur
 Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, ofstream::out)
 // Algorithme :
 //  Initialise les attributs de l'objet et écrit, si c'est possible, l'entête
-//  du fichier pour qu'il respecte le format GraphViz.
+//  du fichier pour qu'il respecte le format.
 {
 #ifdef MAP
 	cout << "Appel au constructeur de <Generateur>" << endl;
@@ -95,14 +97,12 @@ Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, o
 	if (ecriture.fail())
 	{
 		EcriturePossible = false;
-		cerr << "Fichier introuable ou impossible à ouvrir : " << nomFichier << endl;
+		c->afficherErreur("Fichier introuable ou impossible à ouvrir : "+nomFichier);
 		ecriture.close();
 	}
 	else
 	{
 		EcriturePossible = true;
-		ecriture << "digraph {" << endl;
-		ecriture << "node [shape=box, color=blue, style=filled]" << endl;
 	}
 
 } //----- Fin de Generateur
@@ -110,15 +110,12 @@ Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, o
 
 Generateur::~Generateur()
 // Algorithme :
-//  Ecrit, si possible, le caractère '}' afin de terminer propement
-//  le fichier au format GraphViz.
+//  Détruit l'objet et la console d'affichage.
 {
 #ifdef MAP
 	cout << "Appel au destructeur de <Generateur>" << endl;
 #endif
-	if (EcriturePossible) {
-		ecriture << "}" << endl;
-	}
+	delete(printer);
 } //----- Fin de ~Generateur
 
 
