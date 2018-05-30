@@ -1,9 +1,9 @@
 /*************************************************************************
 Maladie  -  description
-Classe représentant une maladie connue, elle possède en attribut les
+Classe reprï¿½sentant une maladie connue, elle possï¿½de en attribut les
 empreintes lui correspondant
 -------------------
-début                :	02-05-2018
+dï¿½but                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
 Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
@@ -12,14 +12,15 @@ stanley.cheah@insa-lyon.fr
 william.occelli@insa-lyon.fr
 
 *************************************************************************/
-//--- Réalisation de la classe <Empreinte> (fichier Empreinte.cpp)--------
+//--- Rï¿½alisation de la classe <Empreinte> (fichier Empreinte.cpp)--------
 
 //---------------------------------------------------------------- INCLUDE
 #include "Maladie.h"
-
-
+#include "Console.h"
 //----------------------------------------------------------------- PUBLIC
-//----------------------------------------------------- Méthodes publiques
+extern Console* c;
+
+//----------------------------------------------------- Mï¿½thodes publiques
 
 void Maladie::AjouterEmpreinte(Empreinte emp)
 {
@@ -29,13 +30,7 @@ void Maladie::AjouterEmpreinte(Empreinte emp)
 
 bool operator==(Maladie const &M1, Maladie const &M2)
 {
-	if (M1.getName().compare(M2.getName()) != 0)
-	{
-		return false;
-	}
-	else {
-		return true;
-	}
+	return (M1.getName()==M2.getName());
 }
 
 bool operator<(Maladie const &M1, Maladie const &M2)
@@ -73,8 +68,14 @@ string Maladie::toString()
 //-------------------------------------------- Constructeurs - destructeur
 Maladie::Maladie(string name) : Name(name)
 {
+#ifdef MAP
+	c->afficherMessage("Appel au constructeur de <Maladie>");
+#endif
 }
 
 Maladie::~Maladie()
 {
+#ifdef MAP
+	c->afficherMessage("Appel au destructeur de <Maladie>");
+#endif
 }

@@ -128,9 +128,15 @@ int main()
 //-------------------------------------------- Constructeurs - destructeur
 Affichage::Affichage()
 {
+#ifdef MAP
+	c->afficherMessage("Appel au constructeur de <Affichage>");
+#endif
 }
 
 
 Affichage::~Affichage()
 {
+#ifdef MAP
+	c->afficherMessage("Appel au destructeur de <Affichage>");
+#endif
 }

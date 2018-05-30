@@ -26,7 +26,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Lecture.h"
+#include "Console.h"
 //----------------------------------------------------------------- PUBLIC
+extern Console* c;
 
 //----------------------------------------------------- Méthodes publiques
 
@@ -68,18 +70,16 @@ Lecture::Lecture(string fichier) : IfFichier(fichier, ios::in) {
 	//  Regarde si la lecture est possible, si non, on renvoie une
 	//  erreur sur le terminal et on empêche la lecture.
 #ifdef MAP
-	cout << "Appel au constructeur de <Lecture>" << endl;
+	c->afficherMessage("Appel au constructeur de <Lecture>");
 #endif
 	nomFichier = fichier;
 	Indice = 0;
-	cout << "Appel au constructeur de <Lecture>" << endl;
 	Decoupeur = new Formateur();
-	cout << "Appel Decoupeur fini" << endl;
 	
 	if (IfFichier.fail())
 	{
 		LecturePossible = false;
-		cerr << "Fichier introuvable ou impossible à ouvrir : " << nomFichier << endl;
+		c->afficherErreur("Fichier introuvable ou impossible à ouvrir : "+nomFichier);
 		IfFichier.close();
 	}
 	else
@@ -93,7 +93,7 @@ Lecture::~Lecture() {
 	// Algorithme :
 	//  On supprime l'objet Decoupeur.
 #ifdef MAP
-	cout << "Appel au destructeur de <Lecture>" << endl;
+	c->afficherMessage("Appel au destructeur de <Lecture>");
 #endif
 	delete Decoupeur;
 }//----- Fin de ~Lecture
