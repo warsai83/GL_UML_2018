@@ -88,8 +88,12 @@ int main()
 		{
 			c->afficherMessage("Demande d'analyse ...");
 			string nomFichier = "./"+commande[1];
-			string res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
-			c->afficherMessage(res);
+			set<string> res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
+			for (std::set<string>::iterator it = res.begin(); it != res.end(); it++)
+			{
+				c->afficherMessage(*it);
+			}
+			
 		}
 		else if (commande[0].compare("LISTEMALADIES"))
 		{
@@ -99,10 +103,10 @@ int main()
 			{
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}
-			for (std::set<Maladie>::iterator i = SETMALADIES.begin(); i != SETMALADIES.end(); i++) {
-				maladies.append(i->toString + "\r\n");
+			set<Maladie> maladiesConnues = g->GetListeMaladie(EMPREINTES);
+			for (std::set<Maladie>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
+				maladies.append(it->getName() + "\r\n");
 			}
-
 			c->afficherMessage(maladies);
 		}
 		else if (commande[0].compare("DETAILSMALADIE"))

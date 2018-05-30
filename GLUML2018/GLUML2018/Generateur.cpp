@@ -47,14 +47,13 @@ void Generateur::EcrireMaladie(const Maladie & maladie) {
 		vector<Empreinte>::iterator it;
 		for (it = tabEmpreinte.begin(); it != tabEmpreinte.end(); ++it)
 		{
-			ecriture << it->toString() << endl;
-		}
 
 #ifdef DEBUG
-		cout << "Ecriture du noeud " << id << " de nom " << url << endl;
+			c->afficherDebug("ECRITURE DE MALADIE "+it->toString());
 #endif
+			ecriture << it->toString() << endl;
+		}
 	}
-	return;
 }//----- Fin de EcrireNoeud
 
  // void Generateur::EcrireEmpreinte(Empreinte & empreinte)
@@ -66,12 +65,9 @@ void Generateur::EcrireEmpreinte(Empreinte & empreinte) {
 	{
 		ecriture << empreinte.toString() << endl;
 #ifdef DEBUG
-		stringstream message;
-		message<<"Ecriture de lien " << idRef << " vers " << idCible;
-		c->afficherDebug(message.str());
+		c->afficherDebug("ECRITURE DE EMPRINTE "+empreinte.toString());
 #endif
 	}
-	return;
 }//----- Fin de EcrireLien
 
 Generateur::Generateur(const Generateur & unGenerateur) :nomFichier(unGenerateur.nomFichier)
@@ -81,7 +77,7 @@ Generateur::Generateur(const Generateur & unGenerateur) :nomFichier(unGenerateur
 //                   de copie de l'ofstream (conduit à sa destruction).
 {
 #ifdef MAP
-	cout << "Appel au constructeur de copie de <Generateur>" << endl;
+	c->afficherMessage("Appel au constructeur de copie de <Generateur>");
 #endif
 	EcriturePossible = false;
 }//----- Fin de Generateur (constructeur de copie)
@@ -92,7 +88,7 @@ Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, o
 //  du fichier pour qu'il respecte le format.
 {
 #ifdef MAP
-	cout << "Appel au constructeur de <Generateur>" << endl;
+	c->afficherMessage("Appel au constructeur de <Generateur>");
 #endif
 	if (ecriture.fail())
 	{
@@ -113,9 +109,8 @@ Generateur::~Generateur()
 //  Détruit l'objet et la console d'affichage.
 {
 #ifdef MAP
-	cout << "Appel au destructeur de <Generateur>" << endl;
+	c->afficherMessage("Appel au destructeur de <Generateur>");
 #endif
-	delete(printer);
 } //----- Fin de ~Generateur
 
 
