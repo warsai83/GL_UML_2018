@@ -81,7 +81,7 @@ int main()
 		if (commande[0].compare("ANALYSE") == 0)
 		{
 			c->afficherMessage("Demande d'analyse ...");
-			string nomFichier = commande[1];
+			string nomFichier = "./"+commande[1];
 			string res = g->AnalyseEmpreinte(EMPREINTES, nomFichier);
 			c->afficherMessage(res);
 		}
@@ -101,12 +101,6 @@ int main()
 			vector<Empreinte> detailsMaladie = g.getDetails(SETMALADIES, maladie);
 			string empreintes = g->AfficherEmpreinte(detailsMaladie);
 			c->afficherMessage(empreintes);
-		}
-		else if (commande[0].compare("CHARGER")) // TODO ??????????? Quelle utilité ?
-		{
-			c->afficherMessage("Chargement du fichier ..");
-			string nomFichier = commande[1];
-			g.Charge
 		}
 		else
 		{

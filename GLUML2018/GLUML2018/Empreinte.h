@@ -39,6 +39,7 @@ public:
 	string toString();
 	Empreinte();
 	Empreinte(int, double, double, double, double, double, vector<string>);
+	Empreinte(const Empreinte &);
 	friend class Gestion;
 	~Empreinte();
 	vector<string> getDisease() const;
