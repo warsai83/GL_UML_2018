@@ -71,7 +71,8 @@ int main()
 	//initialiserEmpreintes();
 	Gestion* g = new Gestion();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
-	while (true)
+	bool continuer=true;
+	while (continuer)
 	{
 
 		c->afficherMessage(" Saisir une action à effectuer : \r\n");
@@ -84,7 +85,7 @@ int main()
 		cout << "res 0 : " << commande[0] << endl << "res 1  : " << commande[1];
 
 		//-----------
-		if (commande[0].compare("ANALYSE") == 0)
+		if (commande[0]=="ANALYSE")
 		{
 			c->afficherMessage("Demande d'analyse ...");
 			string nomFichier = "./"+commande[1];
@@ -95,7 +96,7 @@ int main()
 			}
 			
 		}
-		else if (commande[0].compare("LISTEMALADIES"))
+		else if (commande[0]=="LISTEMALADIES")
 		{
 			c->afficherMessage("Affichage de la liste des maladies ...");
 			string maladies = "";
@@ -110,7 +111,7 @@ int main()
 			}
 			c->afficherMessage(maladies);
 		}
-		else if (commande[0].compare("DETAILSMALADIE"))
+		else if (commande[0]=="DETAILSMALADIE")
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
 			string maladie = commande[1];
@@ -118,6 +119,10 @@ int main()
 			string empreintes = g->AfficherEmpreinte(detailsMaladie);
 			c->afficherMessage(empreintes);*/
 		}
+        else if (commande[0]=="QUITTER")
+        {
+            continuer=false;
+        }
 		else
 		{
 			c->afficherDanger("Commande inconnue");
