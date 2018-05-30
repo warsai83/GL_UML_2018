@@ -30,7 +30,7 @@ vector<string> Empreinte::getDisease() const {
 }
 
 //-------------------------------------------- Constructeurs - destructeur
-Empreinte::Empreinte(int unNoID, double unA1, double unA2, double unA3, double unA4, double unAZ51, vector<string> Diseases) : NoID(unNoID), A1(unA1), A2(unA2), A3(unA3), A4(unA4), AZ51(unAZ51), Disease(Diseases)
+Empreinte::Empreinte(int unNoID, string unA1, double unA2, double unA3, double unA4, double unAZ51, vector<string> Diseases) : NoID(unNoID), A1(unA1), A2(unA2), A3(unA3), A4(unA4), AZ51(unAZ51), Disease(Diseases)
 {
 
 }

@@ -78,7 +78,7 @@ vector<Empreinte> Gestion::LectureBase(string path) {
 	Lecture l (path);
 	vector<Empreinte> listeEmpreintes;
 	vector<vector<string>> empreintes = l.Charger();
-	for (std::vector<vector<string>>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
+	for (std::vector<vector<string>>::iterator i = empreintes.begin()+1; i != empreintes.end(); i++) {
 		listeEmpreintes.push_back(stringToEmpreinte(*i));
 	}
 	return listeEmpreintes;
@@ -92,7 +92,7 @@ Empreinte Gestion::stringToEmpreinte(vector<string>& attributes) {
 			maladies.push_back(*i);
 		}
 	}
-	return Empreinte(stoi(attributes[0]), stod(attributes[1]), stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), stod(attributes[5]), maladies);
+	return Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), stod(attributes[5]), maladies);
 }
 
 //-------------------------------------------- Constructeurs - destructeur
