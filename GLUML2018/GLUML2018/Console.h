@@ -98,9 +98,12 @@ public:
 
 	//----------------------------------------------------- Attributs protégés
 protected:
-	/*ostream sortieConsole;
-	ostream erreurConsole;
-	istream entreeConsole;*/
+	static ostream & erreur (ostream & os);
+	static ostream & attention (ostream & os);
+#ifdef DEBUG
+	static ostream & debug (ostream & os);
+#endif
+	static ostream & raz (ostream & os);
 };
 
 

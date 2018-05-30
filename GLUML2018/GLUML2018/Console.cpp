@@ -37,14 +37,6 @@ const char RESET [] = {033,'[','m',017};
 //----------------------------------------------------- Méthodes publiques
 
 #ifdef DEBUG
-// ostream & debug ( ostream & os )
-// Algorithme :
-//      Change les paramètres du ostream pour qu'il écrive en bleu.
-ostream & debug (ostream & os){
-    os.write(BLEU, sizeof(BLEU));
-    return os;
-}//----- Fin de debug
-
  // afficherDebug(string info)
  // Algorithme :
  //      Ecrit les informations de débugage dans la console
@@ -54,36 +46,11 @@ void Console::afficherDebug(string &info)
 }//----- Fin de afficherDebug
 #endif
 
-// ostream & erreur ( ostream & os )
-// Algorithme :
-//      Change les paramètres du ostream pour qu'il écrive en rouge.
-ostream & Console::erreur (ostream & os){
-    os.write(ROUGE, sizeof(ROUGE));
-    return os;
-}//----- Fin de erreur
-
-// ostream & attention( ostream & os )
-// Algorithme :
-//      Change les paramètres du ostream pour qu'il écrive en jaune.
-ostream & Console::attention (ostream & os){
-    os.write(JAUNE, sizeof(JAUNE));
-    return os;
-}//----- Fin de attention
-
-// ostream & debug ( ostream & os )
-// Algorithme :
-//      Change les paramètres du ostream pour qu'il reprenne ses
-//      paramètres initiaux.
-ostream & Console::raz (ostream & os){
-    os.write(RESET, sizeof(RESET));
-    return os;
-}//----- Fin de debug
-
 
 // afficherErreur(string err)
 // Algorithme :
 //      Affiche le message d'erreur sur la console
-void Console::afficherErreur(const stdin::string &err){
+void Console::afficherErreur(const string &err){
 	cout << erreur << err << raz << endl;
 }//----- Fin de afficherErreur
 
@@ -193,3 +160,39 @@ Console::Console(){
 Console::~Console() {
 
 }
+
+
+// ostream & erreur ( ostream & os )
+// Algorithme :
+//      Change les paramètres du ostream pour qu'il écrive en rouge.
+ostream & Console::erreur (ostream & os){
+	os.write(ROUGE, sizeof(ROUGE));
+	return os;
+}//----- Fin de erreur
+
+// ostream & attention( ostream & os )
+// Algorithme :
+//      Change les paramètres du ostream pour qu'il écrive en jaune.
+ostream & Console::attention (ostream & os){
+	os.write(JAUNE, sizeof(JAUNE));
+	return os;
+}//----- Fin de attention
+
+// ostream & debug ( ostream & os )
+// Algorithme :
+//      Change les paramètres du ostream pour qu'il reprenne ses
+//      paramètres initiaux.
+ostream & Console::raz (ostream & os){
+	os.write(RESET, sizeof(RESET));
+	return os;
+}//----- Fin de debug
+
+#ifdef DEBUG
+// ostream & debug ( ostream & os )
+// Algorithme :
+//      Change les paramètres du ostream pour qu'il écrive en bleu.
+ostream & debug (ostream & os){
+    os.write(BLEU, sizeof(BLEU));
+    return os;
+}//----- Fin de debug
+#endif
