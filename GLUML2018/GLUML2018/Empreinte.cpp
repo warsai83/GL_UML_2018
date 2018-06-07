@@ -23,7 +23,7 @@ extern Console* c;
 
 string Empreinte::toString()
 {
-	string s = to_string(NoID) + ";" + A1 + ";" + to_string(A2) + ";" + to_string(A3) + ";" + to_string(A4) + ";" + to_string(AZ51) + ";";
+	string s = to_string(NoID) + ";" + A1 + ";" + to_string(A2) + ";" + to_string(A3) + ";" + to_string(A4) + ";";
 	return s;
 }
 
@@ -32,7 +32,7 @@ vector<string> Empreinte::getDisease() const{
 }
 
 //-------------------------------------------- Constructeurs - destructeur
-Empreinte::Empreinte(int unNoID, string unA1, double unA2, double unA3, double unA4, double unAZ51, vector<string> Diseases) : NoID(unNoID), A1(unA1), A2(unA2), A3(unA3), A4(unA4), AZ51(unAZ51), Disease(Diseases)
+Empreinte::Empreinte(int unNoID, string unA1, double unA2, double unA3, double unA4, vector<string> Diseases) : NoID(unNoID), A1(unA1), A2(unA2), A3(unA3), A4(unA4), Disease(Diseases)
 {
 #ifdef MAP
 	c->afficherMessage("Appel au constructeur de <Empreinte>");
@@ -46,7 +46,7 @@ Empreinte::Empreinte()
 #endif
 }
 
-Empreinte::Empreinte(const Empreinte & uneEmpreinte): NoID(uneEmpreinte.NoID), A1(uneEmpreinte.A1), A2(uneEmpreinte.A2), A3(uneEmpreinte.A3), A4(uneEmpreinte.A4), AZ51(uneEmpreinte.AZ51), Disease(uneEmpreinte.getDisease())
+Empreinte::Empreinte(const Empreinte & uneEmpreinte): NoID(uneEmpreinte.NoID), A1(uneEmpreinte.A1), A2(uneEmpreinte.A2), A3(uneEmpreinte.A3), A4(uneEmpreinte.A4), Disease(uneEmpreinte.getDisease())
 {
 #ifdef MAP
 	c->afficherMessage("Appel au constructeur de copie de <Empreinte>");

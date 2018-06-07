@@ -55,7 +55,7 @@ vector<vector<string>> Lecture::Charger()
 	cout <<vLigne[0]<<endl;
 	vector<string> vLigne1 = tabEmp[1];
 	cout <<vLigne1[0]<<endl;*/
-	
+
 	/*
 	cout <<&tabEmp[0][0]<<endl;
 	cout <<&tabEmp[1][2]<<endl;*/

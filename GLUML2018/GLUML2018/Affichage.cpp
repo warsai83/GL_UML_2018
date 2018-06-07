@@ -112,7 +112,6 @@ int main()
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}*/
 			set<string> maladiesConnues;
-			cout << Gestion::AfficherEmpreinte(EMPREINTES);
 			maladiesConnues = Gestion::GetListeMaladie(EMPREINTES, maladiesConnues);
 			for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
 				c->afficherMessage(*it + "\r\n");
@@ -131,7 +130,7 @@ int main()
 			c->afficherMessage("Chargement de BD...");
 			string nomFichier = "./" + commande[1];
 			EMPREINTES = Gestion::LectureBase(commande[1]);
-			cout << Gestion::AfficherEmpreinte(EMPREINTES);
+			c->afficherMessage("Chargement terminé");
 		}
 		else if (commande[0] == "QUITTER")
 		{

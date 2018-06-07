@@ -60,14 +60,14 @@ vector<vector<string>> Formateur::Decouper(string ligneLue="") {
 	tabEmp.push_back(*v);
 
 	delete(v);
-	cout << "empreinte brute --------------------------------" << endl;
+	/*cout << "empreinte brute --------------------------------" << endl;
     	cout << NoID << endl;
 	cout << A1 << endl;
 	cout << A2 << endl;
 	cout << A3 << endl;
 	cout << A4 << endl;
 	cout << AZ51<< endl;
-	cout << "vecteurGen----------------------------------------------" << endl;
+	cout << "vecteurGen----------------------------------------------" << endl;*/
 	//delete(v); A FAIRE PLUS TARD
     return tabEmp;
 
