@@ -68,8 +68,8 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 }*/
 int main()
 {
-	//const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
-	const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
+	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
+	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	bool continuer=true;
@@ -103,7 +103,7 @@ int main()
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}*/
 			set<string> maladiesConnues;
-			maladiesConnues = Gestion::GetListeMaladie(EMPREINTES, maladiesConnues);
+			Gestion::GetListeMaladie(EMPREINTES, maladiesConnues);
 			for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
 				c->afficherMessage(*it + "\r\n");
 			}
@@ -111,16 +111,17 @@ int main()
 		else if (commande[0]=="DETAILSMALADIE")
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
-			string maladie = commande[1];
-			/*vector<Empreinte> detailsMaladie = Gestion::getDetails(SETMALADIES, maladie);
+			string nomMaladie = commande[1];
+			vector<Empreinte> detailsMaladie = Gestion::GetDetail(SETMALADIES, nomMaladie);
 			string empreintes = Gestion::AfficherEmpreinte(detailsMaladie);
-			c->afficherMessage(empreintes);*/
+			c->afficherMessage(empreintes);
 		}
 		else if (commande[0] == "LOAD")
 		{
 			c->afficherMessage("Chargement de BD...");
 			string nomFichier = CHEMIN_RACINE+commande[1];
 			EMPREINTES = Gestion::LectureBase(nomFichier);
+
 			c->afficherMessage("Chargement terminé");
 		}
 		else if (commande[0] == "QUITTER")
