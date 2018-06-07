@@ -69,8 +69,8 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 int main()
 {
 	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
-	//const string cheminRacine="./";
-	//initialiserEmpreintes();
+	//const string CHEMIN_RACINE="./";
+			// initialiserEmpreintes();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	bool continuer=true;
 	while (continuer)
@@ -116,9 +116,9 @@ int main()
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
 			string maladie = commande[1];
-			/*vector<Empreinte> detailsMaladie = Gestion::getDetails(SETMALADIES, maladie);
+			vector<Empreinte> detailsMaladie = Gestion::GetDetail(SETMALADIES, maladie);
 			string empreintes = Gestion::AfficherEmpreinte(detailsMaladie);
-			c->afficherMessage(empreintes);*/
+			c->afficherMessage(empreintes);
 		}
 		else if (commande[0] == "LOAD")
 		{
