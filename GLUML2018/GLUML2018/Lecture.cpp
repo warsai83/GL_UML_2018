@@ -1,18 +1,19 @@
 /*************************************************************************
-                           Formateur -  description
-    Classe permettant de lire un fichier log d'un serveur apache
+                           Lecture -  description
+    Classe permettant de lire un fichier contenant des empreintes
     et d'en extraire les informations contenues dans chaque requêtes
-    afin de pouvoir les exploiter avec l'outil Analog.
+    afin de pouvoir les exploiter avec l'outil Malad'IF.
                              -------------------
-    début                : 02-05-2018
-    copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu, Moureau Mathilde, Occelli William 
+    début                : 07-06-2018
+    copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu,
+    									Moureau Mathilde, Occelli William
     e-mail               : stanley.cheah@insa-lyon.fr
 						   matthieu.halunka@insa-lyon.fr
                            mathilde.moureau@insa-lyon.fr
 						   william.occelli@insa-lyon.fr
 *************************************************************************/
 
-//---------- Réalisation de la classe <Generateur> (fichier Lecture.cpp) ------------
+//---------- Réalisation de la classe <Lecture> (fichier Lecture.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 

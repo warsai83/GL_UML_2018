@@ -1,6 +1,6 @@
 /*************************************************************************
                            Console  -  description
-    Classe permettant l'affichage sur la console de visual studio
+                Classe permettant l'affichage sur l'IHM texte
                              -------------------
     début                : 02-05-2018
     copyright            : (C) 2018 par Halunka Matthieu, Mathilde Moureau
@@ -9,10 +9,9 @@
                            mathilde.moureau@insa-lyon.fr
 						   stanley.cheah@insa-lyon.fr
 						   william.occelli@insa-lyon.fr
-
 *************************************************************************/
 
-//---------- Réalisation de la classe <Analog> (fichier Console.cpp) ------------
+//---------- Réalisation de la classe <Console> (fichier Console.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 

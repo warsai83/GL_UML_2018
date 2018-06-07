@@ -1,16 +1,23 @@
 /*************************************************************************
-Gestion  -  description
--------------------
-dÈbut                : $DATE$
-copyright            : (C) $YEAR$ par $AUTHOR$
-e-mail               : $EMAIL$
+                        Gestion  - description
+
+    Classe r√©alisant l'ensemble des services client de l'application.
+
+                          -------------------
+d√©but                :	07-06-2018
+copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
+                                     Stanley Cheah, William Occelli
+e-mail               :	matthieu.halunka@insa-lyon.fr
+                        mathilde.moureau@insa-lyon.fr
+                        stanley.cheah@insa-lyon.fr
+                        william.occelli@insa-lyon.fr
 *************************************************************************/
 
-//---------- RÈalisation de la classe <Gestion> (fichier Gestion.cpp) ------------
+//---------- R√©alisation de la classe <Gestion> (fichier Gestion.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include systËme
+//-------------------------------------------------------- Include syst√®me
 using namespace std;
 #include <iostream>
 #include <algorithm>
@@ -26,12 +33,12 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 extern Console* c;
 
-//----------------------------------------------------- MÈthodes publiques
-// type Gestion::MÈthode ( liste des paramËtres )
+//----------------------------------------------------- M√©thodes publiques
+// type Gestion::M√©thode ( liste des param√®tres )
 // Algorithme :
 //
 //{
-//} //----- Fin de MÈthode
+//} //----- Fin de M√©thode
 string Gestion::AfficherEmpreinte(vector<Empreinte>& listeEmpreinte) {
 	string empreintes = "";
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
@@ -120,6 +127,6 @@ Gestion::~Gestion()
 
   //------------------------------------------------------------------ PRIVE
 
-  //----------------------------------------------------- MÈthodes protÈgÈes
+  //----------------------------------------------------- M√©thodes prot√©g√©es
 
 

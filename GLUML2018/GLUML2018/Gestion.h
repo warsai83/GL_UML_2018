@@ -1,16 +1,23 @@
 /*************************************************************************
-Gestion  -  description
--------------------
-début                : $DATE$
-copyright            : (C) $YEAR$ par $AUTHOR$
-e-mail               : $EMAIL$
+                        Gestion  - description
+
+    Classe rÃ©alisant l'ensemble des services client de l'application.
+
+                          -------------------
+dÃ©but                :	07-06-2018
+copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
+                                     Stanley Cheah, William Occelli
+e-mail               :	matthieu.halunka@insa-lyon.fr
+                        mathilde.moureau@insa-lyon.fr
+                        stanley.cheah@insa-lyon.fr
+                        william.occelli@insa-lyon.fr
 *************************************************************************/
 
 //---------- Interface de la classe <Gestion> (fichier Gestion.h) ----------------
 #if ! defined ( GESTIONEMPREINTE_H )
 #define GESTIONEMPREINTE_H
 
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisï¿½es
 #include <string>
 #include <vector>
 #include <set>
@@ -24,7 +31,7 @@ using namespace std;
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Gestion>
+// RÃ´le de la classe <Gestion>
 //
 //
 //------------------------------------------------------------------------
@@ -34,8 +41,8 @@ class Gestion
 	//----------------------------------------------------------------- PUBLIC
 
 public:
-	//----------------------------------------------------- Méthodes publiques
-	// type Méthode ( liste des paramètres );
+	//----------------------------------------------------- Mï¿½thodes publiques
+	// type Mï¿½thode ( liste des paramï¿½tres );
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -65,12 +72,12 @@ public:
 	//------------------------------------------------------------------ PRIVE
 
 protected:
-	//----------------------------------------------------- Méthodes protégées
+	//----------------------------------------------------- Mï¿½thodes protï¿½gï¿½es
 
-	//----------------------------------------------------- Attributs protégés
+	//----------------------------------------------------- Attributs protï¿½gï¿½s
 
 };
 
-//-------------------------------- Autres définitions dépendantes de <GestionEmpreinte>
+//-------------------------------- Autres dï¿½finitions dï¿½pendantes de <GestionEmpreinte>
 
 #endif // GESTIONEMPREINTE_H

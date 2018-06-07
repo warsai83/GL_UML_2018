@@ -1,15 +1,15 @@
 /*************************************************************************
-Empreinte  -  description
-Classe repr�sentant l'objet Empreinte qui poss�de les caract�ristiques du
-patient en attributs ainsi que la maladie diagnostiqu�e
--------------------
-d�but                :	02-05-2018
+						Empreinte  -  description
+Classe représentant l'objet Empreinte qui posséde les caractéristiques du
+patient en attributs ainsi que la maladie diagnostiquée
+							-------------------
+début                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
-Stanley Cheah, William Occelli
+									Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
-mathilde.moureau@insa-lyon.fr
-stanley.cheah@insa-lyon.fr
-william.occelli@insa-lyon.fr
+						mathilde.moureau@insa-lyon.fr
+						stanley.cheah@insa-lyon.fr
+						william.occelli@insa-lyon.fr
 
 *************************************************************************/
 

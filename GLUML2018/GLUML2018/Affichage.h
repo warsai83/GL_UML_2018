@@ -1,12 +1,11 @@
-
 /*************************************************************************
-Affichage  -  description
-Classe gérant les interactions avec l'utilisateur
--------------------
-début                : 02-05-2018
+                        Affichage  -  description
+            Classe gÃ©rant les interactions avec l'utilisateur
+                            -------------------
+dÃ©but                : 02-05-2018
 copyright            : (C) 2018 par Halunka Matthieu, Mathilde Moureau
 									Stanley Cheah, William Occelli
-e-mail               : matthieu.halunka@insa-lyon.fr
+e-mail               :  matthieu.halunka@insa-lyon.fr
 						mathilde.moureau@insa-lyon.fr
 						stanley.cheah@insa-lyon.fr
 						william.occelli@insa-lyon.fr
@@ -18,12 +17,12 @@ e-mail               : matthieu.halunka@insa-lyon.fr
 
 #pragma once
 //------------------------------------------------------------------------
-// Rôle du module <Affichage>
-//	Permet de gérer les interactions avec l'utilisateur
+// RÃ´le du module <Affichage>
+//	Permet de gÃ©rer les interactions avec l'utilisateur
 //------------------------------------------------------------------------
 
 /////////////////////////////////////////////////////////////////  INCLUDE
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisÃ©es
 #include "Console.h"
 #include "Maladie.h"
 #include "Gestion.h"
@@ -36,7 +35,7 @@ vector<Empreinte> EMPREINTES;
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
-// type Nom ( liste de paramètres );
+// type Nom ( liste de paramÃ¨tres );
 // Mode d'emploi :
 //
 // Contrat :
@@ -45,7 +44,7 @@ class Affichage
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- MÃ©thodes publiques
 	//static string* SeparerString(string s, const char separateur = ' ');
 	// Mode d'emploi :
 	// Contrat :
@@ -59,7 +58,7 @@ public:
 	~Affichage();
 	//----------------------------------------------------- Attributs publiques
 
-	//----------------------------------------------------- Attributs protégés
+	//----------------------------------------------------- Attributs protÃ©gÃ©s
 };
 
 

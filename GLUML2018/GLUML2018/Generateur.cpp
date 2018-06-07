@@ -1,9 +1,9 @@
 /*************************************************************************
 						Generateur  -  description
-Classe permettant d'écrire, dans un fichier, le résultat de l'analyse
+Classe permettant d'Ã©crire, dans un fichier, le rÃ©sultat de l'analyse
 , dans le fichier voulu, du patient.
--------------------
-début                : 23-05-2018
+                            -------------------
+dÃ©but                : 23-05-2018
 copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu,
 									Moureau Mathilde, Occelli William
 e-mail               :  stanley.cheah@insa-lyon.fr
@@ -12,11 +12,11 @@ e-mail               :  stanley.cheah@insa-lyon.fr
 						william.occelli@insa-lyon.fr
 *************************************************************************/
 
-//---------- Réalisation de la classe <Generateur> (fichier Generateur.cpp) ------------
+//---------- RÃ©alisation de la classe <Generateur> (fichier Generateur.cpp) ------------
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systÃ¨me
 
 using namespace std;
 #include <iostream>
@@ -34,12 +34,12 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 extern Console* c;
-//----------------------------------------------------- Méthodes publiques
+//----------------------------------------------------- MÃ©thodes publiques
 // void Generateur::EcrireMaladie (const Maladie & maladie)
 // Algorithme :
 //              Ecrit l'ensemble des empreintes correspondantes
 //				dans le fichier si le fichier 
-//              est accessible en écriture.
+//              est accessible en Ã©criture.
 void Generateur::EcrireMaladie(const Maladie & maladie) {
 	if (EcriturePossible)
 	{
@@ -59,7 +59,7 @@ void Generateur::EcrireMaladie(const Maladie & maladie) {
  // void Generateur::EcrireEmpreinte(Empreinte & empreinte)
  // Algorithme :
  //              Ecrit l'empreinte corresondante si
- //              le fichier est accessible en écriture.
+ //              le fichier est accessible en Ã©criture.
 void Generateur::EcrireEmpreinte(Empreinte & empreinte) {
 	if (EcriturePossible)
 	{
@@ -74,7 +74,7 @@ Generateur::Generateur(const Generateur & unGenerateur) :nomFichier(unGenerateur
 // Algorithme :
 //  Appel interdit - Copie du nom du fichier.
 //                   Impossible d'utiliser le constructeur
-//                   de copie de l'ofstream (conduit à sa destruction).
+//                   de copie de l'ofstream (conduit Ã  sa destruction).
 {
 #ifdef MAP
 	c->afficherMessage("Appel au constructeur de copie de <Generateur>");
@@ -84,7 +84,7 @@ Generateur::Generateur(const Generateur & unGenerateur) :nomFichier(unGenerateur
 
 Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, ofstream::out)
 // Algorithme :
-//  Initialise les attributs de l'objet et écrit, si c'est possible, l'entête
+//  Initialise les attributs de l'objet et Ã©crit, si c'est possible, l'entÃªte
 //  du fichier pour qu'il respecte le format.
 {
 #ifdef MAP
@@ -93,7 +93,7 @@ Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, o
 	if (ecriture.fail())
 	{
 		EcriturePossible = false;
-		c->afficherErreur("Fichier introuable ou impossible à ouvrir : "+nomFichier);
+		c->afficherErreur("Fichier introuable ou impossible Ã  ouvrir : "+nomFichier);
 		ecriture.close();
 	}
 	else
@@ -106,7 +106,7 @@ Generateur::Generateur(string fichier) :nomFichier(fichier), ecriture(fichier, o
 
 Generateur::~Generateur()
 // Algorithme :
-//  Détruit l'objet et la console d'affichage.
+//  DÃ©truit l'objet et la console d'affichage.
 {
 #ifdef MAP
 	c->afficherMessage("Appel au destructeur de <Generateur>");
@@ -116,5 +116,5 @@ Generateur::~Generateur()
 
   //------------------------------------------------------------------ PRIVE
 
-  //----------------------------------------------------- Méthodes protégées
+  //----------------------------------------------------- MÃ©thodes protÃ©gÃ©es
 

@@ -2,17 +2,17 @@
 						Generateur  -  description
 Classe permettant d'écrire, dans un fichier, le résultat de l'analyse
 , dans le fichier voulu, du patient.
--------------------
+                            -------------------
 début                : 23-05-2018
-copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu, 
-									Moureau Mathilde, Occelli William 
+copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu,
+									Moureau Mathilde, Occelli William
 e-mail               :  stanley.cheah@insa-lyon.fr
 						matthieu.halunka@insa-lyon.fr
 						mathilde.moureau@insa-lyon.fr
 						william.occelli@insa-lyon.fr
 *************************************************************************/
 
-//---------- Interface de la classe <Ecriture> (fichier Ecriture.h) ----------------
+//---------- Interface de la classe <Generateur> (fichier Generateur.h) ----------------
 #if ! defined ( GENERATEUR_H )
 #define GENERATEUR_H
 using namespace std;

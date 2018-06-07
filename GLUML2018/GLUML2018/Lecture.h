@@ -1,14 +1,16 @@
 /*************************************************************************
                            Lecture -  description
-    Classe permettant de lire un fichier (log d'un serveur apache)
-    et d'invoquer un objet du type Formateur pour pouvoir extraire
-    les informations contenues dans chaque requêtes (/lignes).
-    Cela dans le but de pouvoir les exploiter avec l'outil Analog.
+    Classe permettant de lire un fichier contenant des empreintes
+    et d'en extraire les informations contenues dans chaque requêtes
+    afin de pouvoir les exploiter avec l'outil Malad'IF.
                              -------------------
-    début                : 07-02-2018
-    copyright            : (C) 2018 par Halunka Matthieu, Augustin Bodet
-    e-mail               : matthieu.halunka@insa-lyon.fr
-                           augustin.bodet@insa-lyon.fr
+    début                : 07-06-2018
+    copyright            : (C) 2018 par Cheah Stanley, Halunka Matthieu,
+    									Moureau Mathilde, Occelli William
+    e-mail               : stanley.cheah@insa-lyon.fr
+						   matthieu.halunka@insa-lyon.fr
+                           mathilde.moureau@insa-lyon.fr
+						   william.occelli@insa-lyon.fr
 *************************************************************************/
 //---------- Interface de la classe <Lecture> (fichier Lecture.h) ----------------
 

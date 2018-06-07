@@ -1,18 +1,18 @@
 /*************************************************************************
-Maladie  -  description
-Classe repr�sentant une maladie connue, elle poss�de en attribut les
-empreintes lui correspondant
--------------------
-d�but                :	02-05-2018
+							Maladie  -  description
+		Classe représentant une maladie connue, elle posséde
+			en attribut les empreintes lui correspondant
+							-------------------
+début                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
-Stanley Cheah, William Occelli
+									 Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
-mathilde.moureau@insa-lyon.fr
-stanley.cheah@insa-lyon.fr
-william.occelli@insa-lyon.fr
+						mathilde.moureau@insa-lyon.fr
+						stanley.cheah@insa-lyon.fr
+						william.occelli@insa-lyon.fr
 
 *************************************************************************/
-//--- R�alisation de la classe <Empreinte> (fichier Empreinte.cpp)--------
+//--- Réalisation de la classe <Maladie> (fichier Empreinte.cpp)--------
 
 //---------------------------------------------------------------- INCLUDE
 #include "Maladie.h"

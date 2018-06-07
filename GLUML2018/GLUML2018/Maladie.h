@@ -1,11 +1,11 @@
 /*************************************************************************
-Maladie  -  description
-Classe représentant une maladie connue, elle possède en attribut les
-empreintes lui correspondant
--------------------
-début                :	02-05-2018
+							Maladie  -  description
+		Classe reprÃ©sentant une maladie connue, elle possÃ©de
+			en attribut les empreintes lui correspondant
+							-------------------
+dÃ©but                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
-										Stanley Cheah, William Occelli
+									 Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
 						mathilde.moureau@insa-lyon.fr
 						stanley.cheah@insa-lyon.fr
@@ -17,11 +17,11 @@ e-mail               :	matthieu.halunka@insa-lyon.fr
 #define Maladie_H
 
 /////////////////////////////////////////////////////////////////  INCLUDE
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systÃ¨me
 #pragma once
 #include <vector>
 #include <string>
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisÃ©es
 #include "Empreinte.h"
 
 //------------------------------------------------------------- Constantes
@@ -31,7 +31,7 @@ e-mail               :	matthieu.halunka@insa-lyon.fr
 
 class Maladie
 {
-	//------------------------------------------------- Surcharge d'opérateurs
+	//------------------------------------------------- Surcharge d'opÃ©rateurs
 
 	//////////////////////////////////////////////////////////////////  PUBLIC
 public:

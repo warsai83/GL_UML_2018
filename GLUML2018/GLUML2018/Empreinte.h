@@ -1,15 +1,15 @@
 /*************************************************************************
-Empreinte  -  description
-Classe représentant l'objet Empreinte qui possède les caractéristiques du
-patient en attributs ainsi que la maladie diagnostiquée
--------------------
-début                :	02-05-2018
+						Empreinte  -  description
+Classe reprÃ©sentant l'objet Empreinte qui possÃ¨de les caractÃ©ristiques du
+patient en attributs ainsi que la maladie diagnostiquÃ©e
+							-------------------
+dÃ©but                :	02-05-2018
 copyright            :	(C) 2018 par Halunka Matthieu, Mathilde Moureau
-Stanley Cheah, William Occelli
+									 Stanley Cheah, William Occelli
 e-mail               :	matthieu.halunka@insa-lyon.fr
-mathilde.moureau@insa-lyon.fr
-stanley.cheah@insa-lyon.fr
-william.occelli@insa-lyon.fr
+						mathilde.moureau@insa-lyon.fr
+						stanley.cheah@insa-lyon.fr
+						william.occelli@insa-lyon.fr
 
 *************************************************************************/
 
@@ -19,13 +19,13 @@ william.occelli@insa-lyon.fr
 
 
 /////////////////////////////////////////////////////////////////  INCLUDE
-//-------------------------------------------------------- Include système
+//-------------------------------------------------------- Include systÃ¨me
 using namespace std;
 #pragma once
 #include <string>
 #include <set>
 #include <vector>
-//--------------------------------------------------- Interfaces utilisées
+//--------------------------------------------------- Interfaces utilisÃ©es
 
 //------------------------------------------------------------- Constantes
 
