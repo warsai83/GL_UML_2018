@@ -75,7 +75,6 @@ set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path
 		double ecartType = sqrt((pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
 			pow(abs(e.A3 - i->A3) - ecartMoyenne, 2) + pow(abs(e.A4 - i->A4) - ecartMoyenne, 2) - ecartMoyenne, 2) / 4);
 		if (ecartMoyenne < 10 && ecartType < 3) {
-			int k = (int)(i->getDisease().size()), p=0;
 			for (std::vector<string>::iterator j = i->getDisease().begin(); j != i->getDisease().end(); j++) {
 				setMaladies.insert(*j);
 			}
