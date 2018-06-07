@@ -43,6 +43,7 @@ public:
 	friend class Gestion;
 	~Empreinte();
 	string getDisease() const;
+	void setDisease(string uneDisease);
 
 	////////////////////////////////////////////////////////////////// PRIVATE
 private:
