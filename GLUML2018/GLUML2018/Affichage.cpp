@@ -129,7 +129,10 @@ int main()
 		{
 			c->afficherMessage("Chargement de BD...");
 			string nomFichier = "./" + commande[1];
-			EMPREINTES = Gestion::LectureBase(commande[1]);
+
+			// CLION
+			//string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
+			EMPREINTES = Gestion::LectureBase(nomFichier);
 			c->afficherMessage("Chargement terminé");
 		}
 		else if (commande[0] == "QUITTER")

@@ -58,7 +58,7 @@ void Formateur::Decouper(string ligneLue="") {
 	v.push_back(AZ51);
 	tabEmp.push_back(v);
 
-	delete (&v);
+	//delete (&v);
 	/*cout << "empreinte brute --------------------------------" << endl;
     	cout << NoID << endl;
 	cout << A1 << endl;
