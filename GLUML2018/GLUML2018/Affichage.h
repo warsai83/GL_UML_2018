@@ -30,8 +30,8 @@ using namespace std;
 //------------------------------------------------------------- Constantes
 Console* c = new Console();
 //------------------------------------------------------------------ Types
-set<Maladie> SETMALADIES;
-vector<Empreinte> EMPREINTES;
+vector<Maladie> listeMaladie;
+vector<Empreinte> listeEmpreinte;
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques

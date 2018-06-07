@@ -49,8 +49,8 @@ public:
 	//
 	static string AfficherEmpreinte(vector<Empreinte>& listeEmpreinte);
 	static set<string>& GetListeMaladie(vector<Empreinte>& listeEmpreinte, std::set<string>&);
-	static vector<Empreinte> GetDetail(set<Maladie>& setMaladie, string nomMaladie);
-	static vector<Empreinte> AnalyseEmpreinte(vector<Empreinte>&,string );
+	static vector<Empreinte> GetDetail(vector<Maladie>& setMaladie, string nomMaladie);
+	static set<string> AnalyseEmpreinte(vector<Empreinte>&,string );
 	static vector<Empreinte> LectureBase(string);
 	static Empreinte stringToEmpreinte(vector<string>&);
 

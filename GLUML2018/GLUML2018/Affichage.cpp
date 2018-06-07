@@ -89,7 +89,6 @@ int main()
 		if (commande[0]=="ANALYSE")
 		{
 			c->afficherMessage("Demande d'analyse ...");
-
 			string nomFichier = CHEMIN_RACINE+commande[1];
 
 			vector<Empreinte> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
@@ -99,12 +98,12 @@ int main()
 		else if (commande[0]=="LISTEMALADIES")
 		{
 			c->afficherMessage("Affichage de la liste des maladies ...");
-			/*if (SETMALADIES.begin() == SETMALADIES.end())
+			/*if (listeMaladie.begin() == listeMaladie.end())
 			{
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}*/
 			set<string> maladiesConnues;
-			Gestion::GetListeMaladie(EMPREINTES, maladiesConnues);
+			Gestion::GetListeMaladie(listeEmpreinte, maladiesConnues);
 			for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
 				c->afficherMessage(*it + "\r\n");
 			}
@@ -113,9 +112,9 @@ int main()
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
 			string nomMaladie = commande[1];
-			vector<Empreinte> detailsMaladie = Gestion::GetDetail(SETMALADIES, nomMaladie);
-			string empreintes = Gestion::AfficherEmpreinte(detailsMaladie);
-			c->afficherMessage(empreintes);
+			vector<Empreinte> detailsMaladie = Gestion::GetDetail(listeMaladie, nomMaladie);
+			string listeEmpreinte = Gestion::AfficherEmpreinte(detailsMaladie);
+			c->afficherMessage(listeEmpreinte);
 		}
 		else if (commande[0] == "LOAD")
 		{
@@ -127,10 +126,38 @@ int main()
 			{
 				string nomFichier = CHEMIN_RACINE + commande[1];
 				EMPREINTES = Gestion::LectureBase(nomFichier);
+			    string nomFichier = CHEMIN_RACINE+commande[1];
+			    listeEmpreinte = Gestion::LectureBase(nomFichier);
+			    //Traitement des listeEmpreinte
+			    if(!listeEmpreinte.empty()){
+				for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
+					if(i->getDisease()!=""){
+						if(listeMaladie.empty()){
+							Maladie nouvelleMaladie=*(new Maladie(i->getDisease()));
+							nouvelleMaladie.AjouterEmpreinte(*i);
+							listeMaladie.push_back(nouvelleMaladie);
+						}else{
+							bool maladieTrouve=false;
+							for (std::vector<Maladie>::iterator im = listeMaladie.begin(); im != listeMaladie.end(); im++) {
+								if(im->getName()==i->getDisease()){
+									im->AjouterEmpreinte(*i);
+									maladieTrouve=true;
+									break;
+								}
+							}
+							if(!maladieTrouve){
+								Maladie nouvelleMaladie=*(new Maladie(i->getDisease()));
+								nouvelleMaladie.AjouterEmpreinte(*i);
+								listeMaladie.push_back(nouvelleMaladie);
+							}
+						}
+					}
+				}
+			}
 
 				c->afficherMessage("Chargement terminé");
 
-				cout<<"Succès de l?envoi du fichier d?empreintes"<<endl;
+				cout<<"Succès de l'envoi du fichier d'empreintes"<<endl;
 			}
 			else
 			{
