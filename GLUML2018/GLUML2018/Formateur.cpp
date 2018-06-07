@@ -36,30 +36,29 @@ extern Console* c;
 //      Décompose la trame obtenue en éléments simples
 //      puis formate certains éléments pour les rendre exploitables
 //      par la classe Analog.
-vector<vector<string>> Formateur::Decouper(string ligneLue="") {
-    if (ligneLue=="")
-    {
-        return tabEmp;
-    }
+void Formateur::Decouper(string ligneLue="") {
+	if (ligneLue == "") {
+		return;
+	}
 	string temp;
 	stringstream ss(ligneLue);
-	vector<string>* v = new vector<string>();
-	getline(ss,NoID,';');
-	getline(ss,A1,';');
-	getline(ss,A2,';');
-	getline(ss,A3,';');
-	getline(ss,A4,';');
-	getline(ss,AZ51,';');
-	
+	tab *v = new vector<string>();
+	getline(ss, NoID, ';');
+	getline(ss, A1, ';');
+	getline(ss, A2, ';');
+	getline(ss, A3, ';');
+	getline(ss, A4, ';');
+	getline(ss, AZ51, ';');
+
 	v->push_back(NoID);
 	v->push_back(A1);
 	v->push_back(A2);
 	v->push_back(A3);
 	v->push_back(A4);
 	v->push_back(AZ51);
-	tabEmp.push_back(*v);
+	tabEmp.insert(tabEmp.end(),*v);
 
-	delete(v);
+	delete (v);
 	/*cout << "empreinte brute --------------------------------" << endl;
     	cout << NoID << endl;
 	cout << A1 << endl;
@@ -69,7 +68,7 @@ vector<vector<string>> Formateur::Decouper(string ligneLue="") {
 	cout << AZ51<< endl;
 	cout << "vecteurGen----------------------------------------------" << endl;*/
 	//delete(v); A FAIRE PLUS TARD
-    return tabEmp;
+	//return NULL;
 
 }//Fin de Decouper
 

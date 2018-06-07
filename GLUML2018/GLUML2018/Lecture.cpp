@@ -39,7 +39,7 @@ vector<vector<string>> Lecture::Charger()
 	string ligne;
 	while(getline(IfFichier,ligne))
 	{
-	tabEmp=Decoupeur->Decouper(ligne);
+	Decoupeur->Decouper(ligne);
 	Indice = Indice +1;
 	
 	/* //AFFICHAGE DU GROS TABLEAU

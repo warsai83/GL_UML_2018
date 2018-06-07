@@ -27,6 +27,8 @@
 //      et de les rendres ainsi lisibles pour la classe Analog.
 //------------------------------------------------------------------------
 
+typedef vector<string> tab;
+
 class Formateur
 {
 //----------------------------------------------------------------- PUBLIC
@@ -41,7 +43,7 @@ public:
     // Contrat :
     //     La requête proposée en entrée sera supposé comme étant
     //     correctement formée et entière.
-    vector<vector<string>> Decouper(string ligneLue);
+    void Decouper(string ligneLue);
 
 //-------------------------------------------- Constructeurs - destructeur
     Formateur ( const Formateur & unFormateur );
@@ -63,13 +65,13 @@ public:
     // Contrat :
     //      Aucun
 
-    	string NoID;
+    string NoID;
 	string A1;
 	string A2;
 	string A3;
 	string A4;
 	string AZ51;
-	vector<vector<string>> tabEmp;
+	vector<tab> tabEmp;
 
 };
 
