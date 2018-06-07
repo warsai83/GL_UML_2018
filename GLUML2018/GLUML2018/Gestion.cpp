@@ -69,8 +69,6 @@ vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, strin
 		for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 			//TODO
 			double ecartMoyenne = (abs(j->A2 - i->A2) + abs(j->A3 - i->A3) + abs(j->A4 - i->A4)) / 3.0;
-				/*double ecartType = sqrt((pow(abs(j->A2 - i->A2) - ecartMoyenne, 2) +
-					pow(abs(j->A3 - i->A3) - ecartMoyenne, 2) + pow(abs(j->A4 - i->A4) - ecartMoyenne, 2) - ecartMoyenne, 2) / 4.0);*/
 				if (ecartMoyenne < ecartMoyenneMin && i->Disease != "" ) {
 					ecartMoyenneMin = ecartMoyenne;
 					//ecartTypeMin = ecartType;
