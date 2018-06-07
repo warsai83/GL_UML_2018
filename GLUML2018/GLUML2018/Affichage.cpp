@@ -89,11 +89,12 @@ int main()
 		if (commande[0]=="ANALYSE")
 		{
 			c->afficherMessage("Demande d'analyse ...");
+
 			string nomFichier = CHEMIN_RACINE+commande[1];
 
 			vector<Empreinte> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
 			c->afficherMessage(Gestion::AfficherEmpreinte(res));
-			
+
 		}
 		else if (commande[0]=="LISTEMALADIES")
 		{
@@ -119,10 +120,23 @@ int main()
 		else if (commande[0] == "LOAD")
 		{
 			c->afficherMessage("Chargement de BD...");
-			string nomFichier = CHEMIN_RACINE+commande[1];
-			EMPREINTES = Gestion::LectureBase(nomFichier);
+			string format;
+			format=commande[1].substr((commande[1].length())-4,commande[1].length());
+			cout<<format<<endl;
+			if(format==".txt")
+			{
+				string nomFichier = CHEMIN_RACINE + commande[1];
+				EMPREINTES = Gestion::LectureBase(nomFichier);
 
-			c->afficherMessage("Chargement terminé");
+				c->afficherMessage("Chargement terminé");
+
+				cout<<"Succès de l?envoi du fichier d?empreintes"<<endl;
+			}
+			else
+			{
+				cerr<<"Erreur, le format de l'empreinte n'est pas valide"<<endl;
+				continuer=false;
+			}
 		}
 		else if (commande[0] == "QUITTER")
 		{
