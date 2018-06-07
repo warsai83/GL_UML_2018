@@ -1,0 +1,66 @@
+.TH Malad'IF 1 "7 juin 2018" "" "./Maladif"
+
+.SH NOM
+Malad'IF \- Outil pour diagnostiquer les maladies.
+
+.SH SYNOPSIS
+.B ./Maladif
+
+.SH DESCRIPTION
+.PP
+Bienvenue et merci d’avoir acheté notre capteur à usage medical ! 
+.br
+Ci-dessous, vous trouverez le moyen d’utiliser notre capteur de 
+maniere adaptee afin de profiter de l’ensemble des fonctionnalites ainsi disponibles.    
+
+.SH MISE EN PLACE DU SERVICE
+.PP
+Afin de pouvoir utiliser notre service, vous avez besoin de mettre en place ce dernier. 
+.br
+Pour cela, a l’aide d’une interface console (shell linux par exemple),  vous devez vous placer dans la racine du dossier contenant l'application.
+.br
+Une fois cela realise, executer la commande suivante : 
+.br
+$ make && ./Maladif
+
+.SH UTILISATION DU SERVICE DE DIAGNOSTIQUE
+.PP
+L’utilisation de cette application se fait a partir d’une interface console qui prend des commandes en mode texte. 
+.br
+Un menu sera affiche afin de vous aider a interagir avec cette derniere afin que vous puissiez utiliser ces fonctionnalites facilement.
+.br
+Les actions réalisables seront décrites dans la section qui suit.
+
+.SH DIFFERENTES COMMANDES PROPOSEES
+Les differentes actions realisables a travers votre interface sont :
+
+.IP "ANALYSE <NomFichierEmpreintesAAnalyser>"
+Permet d'analyse une ou des empreintes contenues dans le fichier indique.
+.br
+Cette analyse affiche l'ensemble des maladies trouvees par patients.
+
+.IP "LISTEMALADIES"
+Permet d'afficher l'ensemble des maladies connues au sein de votre base.
+
+.IP "DETAILSMALADIE <NomMaladie>"
+Permet d'afficher l'empreinte associee a la madie desiree.
+.br
+ATTENTION - Cette maladie devra etre connue au sein de votre base.
+
+.IP "CHARGER <NomFichierEmpreintesFournies>"
+Permet de charger un ensemble de maladies dans votre base de maladie connues.
+
+
+.SH AUTEURS
+.B Stanley Cheah
+\- stanley.cheah@insa-lyon.fr
+.br
+.B Halunka Matthieu
+\- matthieu.halunka@insa-lyon.fr
+.br
+.B Mathilde Moureau
+\- mathilde.moureau@insa-lyon.fr
+.br
+.B William Occelli
+\- william.occelli@insa-lyon.fr
+
