@@ -50,7 +50,6 @@ set<string>& Gestion::GetListeMaladie(vector<Empreinte>& listeEmpreinte,std::set
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 			setMaladie.insert(i->Disease);
 	}
-	return setMaladie;
 }
 vector<Empreinte> Gestion::GetDetail(set<Maladie>& setMaladie, string nomMaladie) {
 	for (std::set<Maladie>::iterator i = setMaladie.begin(); i != setMaladie.end(); i++) {
@@ -58,8 +57,7 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie>& setMaladie, string nomMaladie
 			return i->getListeEmpreintes();
 		}
 	}
-	vector<Empreinte> ListeEmpreintes;
-	return ListeEmpreintes;
+	return vector<Empreinte>();
 }
 
 set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
