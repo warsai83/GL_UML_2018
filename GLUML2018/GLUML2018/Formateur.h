@@ -27,7 +27,7 @@
 //      et de les rendres ainsi lisibles pour la classe Analog.
 //------------------------------------------------------------------------
 
-typedef vector<string> tab;
+typedef vector<string> listeAttributs;
 
 class Formateur
 {
@@ -71,7 +71,7 @@ public:
 	string A3;
 	string A4;
 	string AZ51;
-	vector<tab> tabEmp;
+	vector<listeAttributs> tabEmp;
 
 };
 

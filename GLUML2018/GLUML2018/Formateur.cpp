@@ -42,7 +42,7 @@ void Formateur::Decouper(string ligneLue="") {
 	}
 	string temp;
 	stringstream ss(ligneLue);
-	tab *v = new vector<string>();
+	listeAttributs v = *(new vector<string>());
 	getline(ss, NoID, ';');
 	getline(ss, A1, ';');
 	getline(ss, A2, ';');
@@ -50,15 +50,15 @@ void Formateur::Decouper(string ligneLue="") {
 	getline(ss, A4, ';');
 	getline(ss, AZ51, ';');
 
-	v->push_back(NoID);
-	v->push_back(A1);
-	v->push_back(A2);
-	v->push_back(A3);
-	v->push_back(A4);
-	v->push_back(AZ51);
-	tabEmp.insert(tabEmp.end(),*v);
+	v.push_back(NoID);
+	v.push_back(A1);
+	v.push_back(A2);
+	v.push_back(A3);
+	v.push_back(A4);
+	v.push_back(AZ51);
+	tabEmp.push_back(v);
 
-	delete (v);
+	delete (&v);
 	/*cout << "empreinte brute --------------------------------" << endl;
     	cout << NoID << endl;
 	cout << A1 << endl;
