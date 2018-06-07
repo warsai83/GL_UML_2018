@@ -48,10 +48,7 @@ string Gestion::AfficherEmpreinte(vector<Empreinte>& listeEmpreinte) {
 }
 set<string>& Gestion::GetListeMaladie(vector<Empreinte>& listeEmpreinte,std::set<string>& setMaladie) {
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
-		vector<string> diseases = i->getDisease();
-		for (std::vector<string>::iterator j = diseases.begin(); j != diseases.end(); j++) {
-			setMaladie.insert(*j);
-		}
+			setMaladie.insert(i->Disease);
 	}
 	return setMaladie;
 }
@@ -75,9 +72,7 @@ set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path
 		double ecartType = sqrt((pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
 			pow(abs(e.A3 - i->A3) - ecartMoyenne, 2) + pow(abs(e.A4 - i->A4) - ecartMoyenne, 2) - ecartMoyenne, 2) / 4);
 		if (ecartMoyenne < 10 && ecartType < 3) {
-			for (std::vector<string>::iterator j = i->getDisease().begin(); j != i->getDisease().end(); j++) {
-				setMaladies.insert(*j);
-			}
+				setMaladies.insert(i->Disease);
 		}
 	}
 	return setMaladies;
@@ -95,13 +90,7 @@ vector<Empreinte> Gestion::LectureBase(string path) {
 
 
 Empreinte Gestion::stringToEmpreinte(vector<string>& attributes) {
-	vector<string> maladies(0);
-	if (attributes.size() > 5) {
-		for (std::vector<string>::iterator i = attributes.begin()+5; i != attributes.end(); i++) {
-			maladies.push_back(*i);
-		}
-	}
-	return Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), maladies);
+	return Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), attributes[5]);
 }
 
 //-------------------------------------------- Constructeurs - destructeur

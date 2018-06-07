@@ -38,11 +38,11 @@ public:
 	//---------------------------------------------------- Fonctions publiques
 	string toString();
 	Empreinte();
-	Empreinte(int, string, double, double, double, vector<string>);
+	Empreinte(int, string, double, double, double, string);
 	Empreinte(const Empreinte &);
 	friend class Gestion;
 	~Empreinte();
-	vector<string> getDisease() const;
+	string getDisease() const;
 
 	////////////////////////////////////////////////////////////////// PRIVATE
 private:
@@ -50,7 +50,7 @@ private:
 	int NoID;
 	string A1;
 	double A2, A3, A4;
-	vector<string> Disease;
+	string Disease;
 };
 #endif
 
