@@ -48,17 +48,14 @@ void Formateur::Decouper(string ligneLue="") {
 	getline(ss, A2, ';');
 	getline(ss, A3, ';');
 	getline(ss, A4, ';');
-	getline(ss, AZ51, ';');
 
 	v.push_back(NoID);
 	v.push_back(A1);
 	v.push_back(A2);
 	v.push_back(A3);
 	v.push_back(A4);
-	v.push_back(AZ51);
 	tabEmp.push_back(v);
 
-	//delete (&v);
 	/*cout << "empreinte brute --------------------------------" << endl;
     	cout << NoID << endl;
 	cout << A1 << endl;
@@ -85,7 +82,6 @@ Formateur::Formateur ( const Formateur & unFormateur )
     	A2=unFormateur.A2;
     	A3=unFormateur.A3;
     	A4=unFormateur.A4;
-	AZ51=unFormateur.AZ51;
 } //----- Fin de Formateur (constructeur de copie)
 
 
@@ -102,7 +98,6 @@ Formateur::Formateur ()
 	A2="";
 	A3="";
 	A4="";
-	AZ51="";
 } //----- Fin de Formateur
 
 

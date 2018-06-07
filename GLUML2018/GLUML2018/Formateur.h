@@ -70,7 +70,6 @@ public:
 	string A2;
 	string A3;
 	string A4;
-	string AZ51;
 	vector<listeAttributs> tabEmp;
 
 };

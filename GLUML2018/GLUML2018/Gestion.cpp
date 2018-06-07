@@ -67,6 +67,7 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie>& setMaladie, string nomMaladie
 
 set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
 	Empreinte e = LectureBase(path).front();
+	//cout << e.toString();
 	set<string> setMaladies;
 	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
 		//TODO
@@ -74,6 +75,7 @@ set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path
 		double ecartType = sqrt((pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
 			pow(abs(e.A3 - i->A3) - ecartMoyenne, 2) + pow(abs(e.A4 - i->A4) - ecartMoyenne, 2) - ecartMoyenne, 2) / 4);
 		if (ecartMoyenne < 10 && ecartType < 3) {
+			int k = (int)(i->getDisease().size()), p=0;
 			for (std::vector<string>::iterator j = i->getDisease().begin(); j != i->getDisease().end(); j++) {
 				setMaladies.insert(*j);
 			}
