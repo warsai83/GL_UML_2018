@@ -68,6 +68,8 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 }*/
 int main()
 {
+	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
+	//const string cheminRacine="./";
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	bool continuer=true;
@@ -87,14 +89,7 @@ int main()
 		if (commande[0]=="ANALYSE")
 		{
 			c->afficherMessage("Demande d'analyse ...");
-
-
-			// VISUAL STUDIO
-			string nomFichier = "./"+commande[1];
-
-
-			// CLION
-			//string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
+			string nomFichier = CHEMIN_RACINE+commande[1];
 
 
 			set<string> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
@@ -128,10 +123,7 @@ int main()
 		else if (commande[0] == "LOAD")
 		{
 			c->afficherMessage("Chargement de BD...");
-			string nomFichier = "./" + commande[1];
-
-			// CLION
-			//string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
+			string nomFichier = CHEMIN_RACINE+commande[1];
 			EMPREINTES = Gestion::LectureBase(nomFichier);
 			c->afficherMessage("Chargement terminé");
 		}
