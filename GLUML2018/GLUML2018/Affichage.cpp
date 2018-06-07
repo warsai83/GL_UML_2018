@@ -33,43 +33,10 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 }
 
 
-/*void initialiserEmpreintes()
-{
-	Maladie* mal1 = new Maladie("Rhume");
-	vector<string>  s;
-	string mal = "Rhume";
-	s.assign(mal);
-	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, s );
-	mal1->AjouterEmpreinte(*h1);
-	SETMALADIES.insert(*mal1);
-	EMPREINTES.assign(1,*h1);
-
-	Maladie* mal2 = new Maladie("Angine");
-	s = "Angine";
-	Empreinte* h2 = new Empreinte(2, false, 1.1, 14.3, 13.2, 2367, s);
-	mal2->AjouterEmpreinte(*h2);
-	SETMALADIES.insert(*mal2);
-	EMPREINTES.assign(1, *h2);
-
-	Maladie* mal3 = new Maladie("Grippe");
-	s = "Grippe";
-	Empreinte* h3 = new Empreinte(3, 0, 12, 145, 12.1, 11, s);
-	mal3->AjouterEmpreinte(*h3);
-	SETMALADIES.insert(*mal3);
-	EMPREINTES.assign(1, *h3);
-
-	Maladie* mal4 = new Maladie("Gastro");
-	s = "Gastro";
-	Empreinte* h4 = new Empreinte(4, 2, 2.14, 20, 2.102, 1836, s);
-	mal4->AjouterEmpreinte(*h4);
-	SETMALADIES.insert(*mal4);
-	EMPREINTES.assign(1, *h4);
-
-}*/
 int main()
 {
-	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
-	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
+	//const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
+	const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	bool continuer=true;
@@ -124,7 +91,7 @@ int main()
 			cout<<format<<endl;
 			if(format==".txt")
 			{
-			    string nomFichier = CHEMIN_RACINE+commande[1];
+				string nomFichier = CHEMIN_RACINE + commande[1];
 			    listeEmpreinte = Gestion::LectureBase(nomFichier);
 			    //Traitement des listeEmpreinte
 			    if(!listeEmpreinte.empty()){
