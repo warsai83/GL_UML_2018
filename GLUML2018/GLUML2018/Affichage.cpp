@@ -91,7 +91,7 @@ int main()
 			c->afficherMessage("Demande d'analyse ...");
 			string nomFichier = CHEMIN_RACINE+commande[1];
 
-			vector<Empreinte> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
+			vector<Empreinte> res = Gestion::AnalyseEmpreinte(listeEmpreinte, nomFichier);
 			c->afficherMessage(Gestion::AfficherEmpreinte(res));
 
 		}
@@ -124,8 +124,6 @@ int main()
 			cout<<format<<endl;
 			if(format==".txt")
 			{
-				string nomFichier = CHEMIN_RACINE + commande[1];
-				EMPREINTES = Gestion::LectureBase(nomFichier);
 			    string nomFichier = CHEMIN_RACINE+commande[1];
 			    listeEmpreinte = Gestion::LectureBase(nomFichier);
 			    //Traitement des listeEmpreinte
