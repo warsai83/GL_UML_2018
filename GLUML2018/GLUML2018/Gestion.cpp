@@ -46,7 +46,7 @@ string Gestion::AfficherEmpreinte(vector<Empreinte>& listeEmpreinte) {
 	}
 	return empreintes;
 }
-set<string>& Gestion::GetListeMaladie(vector<Empreinte>& listeEmpreinte,std::set<string>& setMaladie) {
+void Gestion::GetListeMaladie(vector<Empreinte>& listeEmpreinte,std::set<string>& setMaladie) {
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 			setMaladie.insert(i->Disease);
 	}
