@@ -31,6 +31,10 @@ string Empreinte::getDisease() const{
 	return Disease;
 }
 
+void Empreinte::setDisease(string uneDisease) {
+	Disease = uneDisease;
+}
+
 //-------------------------------------------- Constructeurs - destructeur
 Empreinte::Empreinte(int unNoID, string unA1, double unA2, double unA3, double unA4, string disease) : NoID(unNoID), A1(unA1), A2(unA2), A3(unA3), A4(unA4), Disease(disease)
 {

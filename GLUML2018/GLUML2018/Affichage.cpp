@@ -91,12 +91,8 @@ int main()
 			c->afficherMessage("Demande d'analyse ...");
 			string nomFichier = CHEMIN_RACINE+commande[1];
 
-
-			set<string> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
-			for (std::set<string>::iterator it = res.begin(); it != res.end(); it++)
-			{
-				c->afficherMessage(*it);
-			}
+			vector<Empreinte> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
+			c->afficherMessage(Gestion::AfficherEmpreinte(res));
 			
 		}
 		else if (commande[0]=="LISTEMALADIES")

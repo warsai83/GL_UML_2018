@@ -62,27 +62,39 @@ vector<Empreinte> Gestion::GetDetail(set<Maladie>& setMaladie, string nomMaladie
 	return ListeEmpreintes;
 }
 
-set<string> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
-	Empreinte e = LectureBase(path).front();
+vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
+	vector <Empreinte> e = LectureBase(path);
 	//cout << e.toString();
-	set<string> setMaladies;
-	for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
-		//TODO
-		double ecartMoyenne = (abs(e.A2 - i->A2)+ abs(e.A3 - i->A3)+ abs(e.A4 - i->A4))/4;
-		double ecartType = sqrt((pow(abs(e.A2 - i->A2) - ecartMoyenne, 2) + 
-			pow(abs(e.A3 - i->A3) - ecartMoyenne, 2) + pow(abs(e.A4 - i->A4) - ecartMoyenne, 2) - ecartMoyenne, 2) / 4);
-		if (ecartMoyenne < 10 && ecartType < 3) {
-				setMaladies.insert(i->Disease);
+	string maladieSupposee;
+	double ecartMoyenneMin = 10000, ecartTypeMin = 10000;
+	for (std::vector<Empreinte>::iterator j = e.begin(); j != e.end(); j++) {
+		for (std::vector<Empreinte>::iterator i = references.begin(); i != references.end(); i++) {
+			//TODO
+			double ecartMoyenne = (abs(j->A2 - i->A2) + abs(j->A3 - i->A3) + abs(j->A4 - i->A4)) / 3.0;
+				/*double ecartType = sqrt((pow(abs(j->A2 - i->A2) - ecartMoyenne, 2) +
+					pow(abs(j->A3 - i->A3) - ecartMoyenne, 2) + pow(abs(j->A4 - i->A4) - ecartMoyenne, 2) - ecartMoyenne, 2) / 4.0);*/
+				if (ecartMoyenne < ecartMoyenneMin && i->Disease != "" ) {
+					ecartMoyenneMin = ecartMoyenne;
+					//ecartTypeMin = ecartType;
+					maladieSupposee = i->Disease; 
+				}
 		}
+		if ( ecartMoyenneMin < 10) {
+			j->setDisease(maladieSupposee);
+		}
+		else {
+			j->setDisease("None");
+		}
+		ecartMoyenneMin = 10000, ecartTypeMin = 10000;
 	}
-	return setMaladies;
+	return e;
 }
 
 vector<Empreinte> Gestion::LectureBase(string path) {
 	Lecture l (path);
 	vector<Empreinte> listeEmpreintes;
 	vector<vector<string>> empreintes = l.Charger();
-	for (std::vector<vector<string>>::iterator i = empreintes.begin()+1; i != empreintes.end(); i++) {
+	for (std::vector<vector<string>>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
 		listeEmpreintes.push_back(stringToEmpreinte(*i));
 	}
 	return listeEmpreintes;
