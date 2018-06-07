@@ -33,7 +33,7 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 }
 
 
-/*void initialiserEmpreintes()
+/*void initialiserlisteEmpreinte()
 {
 	Maladie* mal1 = new Maladie("Rhume");
 	vector<string>  s;
@@ -41,36 +41,36 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 	s.assign(mal);
 	Empreinte* h1 = new Empreinte(1, 1, 2.12, 13, 3.156,1236, s );
 	mal1->AjouterEmpreinte(*h1);
-	SETMALADIES.insert(*mal1);
-	EMPREINTES.assign(1,*h1);
+	listeMaladie.insert(*mal1);
+	listeEmpreinte.assign(1,*h1);
 
 	Maladie* mal2 = new Maladie("Angine");
 	s = "Angine";
 	Empreinte* h2 = new Empreinte(2, false, 1.1, 14.3, 13.2, 2367, s);
 	mal2->AjouterEmpreinte(*h2);
-	SETMALADIES.insert(*mal2);
-	EMPREINTES.assign(1, *h2);
+	listeMaladie.insert(*mal2);
+	listeEmpreinte.assign(1, *h2);
 
 	Maladie* mal3 = new Maladie("Grippe");
 	s = "Grippe";
 	Empreinte* h3 = new Empreinte(3, 0, 12, 145, 12.1, 11, s);
 	mal3->AjouterEmpreinte(*h3);
-	SETMALADIES.insert(*mal3);
-	EMPREINTES.assign(1, *h3);
+	listeMaladie.insert(*mal3);
+	listeEmpreinte.assign(1, *h3);
 
 	Maladie* mal4 = new Maladie("Gastro");
 	s = "Gastro";
 	Empreinte* h4 = new Empreinte(4, 2, 2.14, 20, 2.102, 1836, s);
 	mal4->AjouterEmpreinte(*h4);
-	SETMALADIES.insert(*mal4);
-	EMPREINTES.assign(1, *h4);
+	listeMaladie.insert(*mal4);
+	listeEmpreinte.assign(1, *h4);
 
 }*/
 int main()
 {
 	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
 	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
-	//initialiserEmpreintes();
+	//initialiserlisteEmpreinte();
 	c->afficherMessage("Bienvenu sur le service Malad'If ! \r\n");
 	bool continuer=true;
 	while (continuer)
@@ -92,7 +92,7 @@ int main()
 			string nomFichier = CHEMIN_RACINE+commande[1];
 
 
-			set<string> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
+			set<string> res = Gestion::AnalyseEmpreinte(listeEmpreinte, nomFichier);
 			for (std::set<string>::iterator it = res.begin(); it != res.end(); it++)
 			{
 				c->afficherMessage(*it);
@@ -102,12 +102,12 @@ int main()
 		else if (commande[0]=="LISTEMALADIES")
 		{
 			c->afficherMessage("Affichage de la liste des maladies ...");
-			/*if (SETMALADIES.begin() == SETMALADIES.end())
+			/*if (listeMaladie.begin() == listeMaladie.end())
 			{
 				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 			}*/
 			set<string> maladiesConnues;
-			Gestion::GetListeMaladie(EMPREINTES, maladiesConnues);
+			Gestion::GetListeMaladie(listeEmpreinte, maladiesConnues);
 			for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
 				c->afficherMessage(*it + "\r\n");
 			}
@@ -116,15 +116,41 @@ int main()
 		{
 			c->afficherMessage("Affichage des détails de la maladie ...");
 			string nomMaladie = commande[1];
-			vector<Empreinte> detailsMaladie = Gestion::GetDetail(SETMALADIES, nomMaladie);
-			string empreintes = Gestion::AfficherEmpreinte(detailsMaladie);
-			c->afficherMessage(empreintes);
+			vector<Empreinte> detailsMaladie = Gestion::GetDetail(listeMaladie, nomMaladie);
+			string listeEmpreinte = Gestion::AfficherEmpreinte(detailsMaladie);
+			c->afficherMessage(listeEmpreinte);
 		}
 		else if (commande[0] == "LOAD")
 		{
 			c->afficherMessage("Chargement de BD...");
 			string nomFichier = CHEMIN_RACINE+commande[1];
-			EMPREINTES = Gestion::LectureBase(nomFichier);
+			listeEmpreinte = Gestion::LectureBase(nomFichier);
+			//Traitement des listeEmpreinte
+			if(!listeEmpreinte.empty()){
+				for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
+					if(i->getDisease()!=""){
+						if(listeMaladie.empty()){
+							Maladie nouvelleMaladie=*(new Maladie(i->getDisease()));
+							nouvelleMaladie.AjouterEmpreinte(*i);
+							listeMaladie.push_back(nouvelleMaladie);
+						}else{
+							bool maladieTrouve=false;
+							for (std::vector<Maladie>::iterator im = listeMaladie.begin(); im != listeMaladie.end(); im++) {
+								if(im->getName()==i->getDisease()){
+									im->AjouterEmpreinte(*i);
+									maladieTrouve=true;
+									break;
+								}
+							}
+							if(!maladieTrouve){
+								Maladie nouvelleMaladie=*(new Maladie(i->getDisease()));
+								nouvelleMaladie.AjouterEmpreinte(*i);
+								listeMaladie.push_back(nouvelleMaladie);
+							}
+						}
+					}
+				}
+			}
 
 			c->afficherMessage("Chargement terminé");
 		}

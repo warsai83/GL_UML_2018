@@ -51,8 +51,8 @@ set<string>& Gestion::GetListeMaladie(vector<Empreinte>& listeEmpreinte,std::set
 			setMaladie.insert(i->Disease);
 	}
 }
-vector<Empreinte> Gestion::GetDetail(set<Maladie>& setMaladie, string nomMaladie) {
-	for (std::set<Maladie>::iterator i = setMaladie.begin(); i != setMaladie.end(); i++) {
+vector<Empreinte> Gestion::GetDetail(vector<Maladie>& setMaladie, string nomMaladie) {
+	for (std::vector<Maladie>::iterator i = setMaladie.begin(); i != setMaladie.end(); i++) {
 		if (i->getName() == nomMaladie) {
 			return i->getListeEmpreintes();
 		}
