@@ -39,8 +39,8 @@ vector<vector<string>> Lecture::Charger()
 	string ligne;
 	while(getline(IfFichier,ligne))
 	{
-	Decoupeur->Decouper(ligne);
-	Indice = Indice +1;
+		Decoupeur->Decouper(ligne);
+		Indice = Indice +1;
 	
 	/* //AFFICHAGE DU GROS TABLEAU
 	for(vector<string> vLigne:tabEmp)
@@ -61,7 +61,7 @@ vector<vector<string>> Lecture::Charger()
 	cout <<&tabEmp[1][2]<<endl;*/
 	//cout <<"Ligne numéro "<< Indice << endl << ligne << endl;
     	}
-    	return tabEmp;
+    	return Decoupeur->tabEmp;
 }//Fin de Charger
 
 

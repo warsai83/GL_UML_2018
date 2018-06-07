@@ -62,7 +62,6 @@ public:
     int Indice;
     ifstream IfFichier;
     Formateur* Decoupeur;
-	vector<vector<string>> tabEmp;
 //----------------------------------------------------- Attributs protégés
 protected :
     string nomFichier;
