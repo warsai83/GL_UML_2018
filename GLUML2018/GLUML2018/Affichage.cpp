@@ -90,11 +90,11 @@ int main()
 
 
 			// VISUAL STUDIO
-			string nomFichier = "./"+commande[1];
+			//string nomFichier = "./"+commande[1];
 
 
 			// CLION
-			//string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
+			string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
 
 
 			set<string> res = Gestion::AnalyseEmpreinte(EMPREINTES, nomFichier);
@@ -128,10 +128,10 @@ int main()
 		else if (commande[0] == "LOAD")
 		{
 			c->afficherMessage("Chargement de BD...");
-			string nomFichier = "./" + commande[1];
+			//string nomFichier = "./" + commande[1];
 
 			// CLION
-			//string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
+			string nomFichier = "../GLUML2018/GLUML2018/"+commande[1];
 			EMPREINTES = Gestion::LectureBase(nomFichier);
 			c->afficherMessage("Chargement terminé");
 		}
