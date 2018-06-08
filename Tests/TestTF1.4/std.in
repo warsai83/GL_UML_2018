@@ -1,2 +1,3 @@
-LOAD test.txt
+LOAD empreintes.txt
+ANALYSE faux.txt
 QUITTER

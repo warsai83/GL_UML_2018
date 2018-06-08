@@ -67,6 +67,10 @@ void Console::afficherMessage(const string &msg) {
 	cout << msg << endl;
 }//----- Fin de afficherMessage
 
+void Console::afficherTaille(const size_t &taille) {
+    cout << taille << endl;
+}//----- Fin de afficherMessage
+
 // lireEntier()
 // Algorithme :
 //	Méthode pour lire un entier valide à partir du terminal

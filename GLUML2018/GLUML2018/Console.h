@@ -70,6 +70,8 @@ public:
 
 	void afficherMessage(const string &msg);
 
+	void afficherTaille(const size_t &taille);
+
 	int lireEntier();
 
 	string lireChaine();
