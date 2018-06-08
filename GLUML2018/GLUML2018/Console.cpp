@@ -50,7 +50,7 @@ void Console::afficherDebug(const string &info)
 // Algorithme :
 //      Affiche le message d'erreur sur la console
 void Console::afficherErreur(const string &err){
-	cout << erreur << err << raz << endl;
+	cerr << err << endl;
 }//----- Fin de afficherErreur
 
 // afficherDanger(string danger)
