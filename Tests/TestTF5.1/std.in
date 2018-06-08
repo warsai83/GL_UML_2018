@@ -1,2 +1,3 @@
-LOAD e.txt
+LOAD empreintes.txt
+LOAD e2.txt
 QUITTER

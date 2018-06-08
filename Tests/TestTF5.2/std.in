@@ -1,0 +1,3 @@
+LOAD empreintes.txt
+LOAD fausse.txt
+QUITTER

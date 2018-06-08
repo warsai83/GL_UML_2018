@@ -35,10 +35,10 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 
 int main()
 {
-	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
+	//const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
 	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
     //const string CHEMIN_RACINE="./";
-    //const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
+    const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenue sur le service Malad'If ! \r\n");
 	bool continuer=true;
@@ -129,7 +129,6 @@ int main()
 			else
 			{
 				c->afficherErreur("Erreur, le format de l'empreinte n'est pas valide");
-				continuer=false;
 			}
 		}
         else if (commande[0] == "LIMIT")
