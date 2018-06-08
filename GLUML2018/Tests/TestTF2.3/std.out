@@ -1,0 +1,16 @@
+Bienvenue sur le service Malad'If !
+
+ Saisir une action a effectuer :
+
+ANALYSE e2.txt
+Demande d'analyse ...
+[33mWarning, la base ne contient pas de maladie référencée[m
+2;AA;119.644177;39.725708;141.376788;None
+0;AA;152.522202;147.966462;132.340194;None
+1;AA;18.713158;23.035148;173.707814;None
+3;AA;38.899999;108.510273;167.669113;None
+4;AA;76.126961;131.543561;182.610347;None
+5;AA;172.984794;201.510356;149.614447;None
+6;AA;172.000000;201.000000;149.000000;None
+
+ Saisir une action a effectuer :

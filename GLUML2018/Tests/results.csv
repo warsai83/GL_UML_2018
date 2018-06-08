@@ -1,0 +1,5 @@
+Test ID;Return code validation;Out result;StdErr result;File creation result;Global result
+TestTF1.1;1;1;1;;1
+TestTF1.2;1;1;1;;1
+TestTF1.3;1;0;0;;0
+TestTF1.4;1;0;0;;0
