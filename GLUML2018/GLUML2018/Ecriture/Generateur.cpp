@@ -29,7 +29,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Generateur.h"
-#include "Console.h"
+#include "../Vue/Console.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC

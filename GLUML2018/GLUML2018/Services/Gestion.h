@@ -22,8 +22,8 @@ e-mail               :	matthieu.halunka@insa-lyon.fr
 #include <vector>
 #include <set>
 
-#include "Empreinte.h"
-#include "Maladie.h"
+#include "../ObjetsMetiers/Empreinte.h"
+#include "../ObjetsMetiers/Maladie.h"
 
 using namespace std;
 //------------------------------------------------------------- Constantes
