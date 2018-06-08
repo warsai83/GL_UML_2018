@@ -107,7 +107,7 @@ vector<Empreinte> Gestion::LectureBase(string path) {
     return listeEmpreintes;
 }
 
-void Gestion::chargerListeMaladies(vector<Empreinte>& listeEmpreinte, vector<Maladie>& listeMaladie) {
+void Gestion::ChargerListeMaladies(vector<Empreinte>& listeEmpreinte, vector<Maladie>& listeMaladie) {
 
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 		if (i->getDisease() != "") {
