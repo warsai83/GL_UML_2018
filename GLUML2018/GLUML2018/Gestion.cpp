@@ -63,7 +63,6 @@ vector<Empreinte> Gestion::GetDetail(vector<Maladie>& setMaladie, string nomMala
 vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
 	if (references.empty()) {
 		c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
-		return;
 	}
 	vector <Empreinte> e = LectureBase(path);
 	//cout << e.toString();

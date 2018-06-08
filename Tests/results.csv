@@ -3,10 +3,9 @@ TestTF1.1;1;1;1;;1
 TestTF1.2;1;1;1;;1
 TestTF1.3;1;1;1;;1
 TestTF1.4;1;1;1;;1
-TestTF2.2;0;1;0;;0
-TestTF2.3;0;0;0;;0
-TestTF3.1;0;0;0;;0
-TestTF3.2;0;0;0;;0
+TestTF2.1;1;1;1;;1
+TestTF3.1;1;1;1;;1
+TestTF3.2;1;1;1;;1
 TestTF4.1;1;1;1;;1
 TestTF4.2;1;1;1;;1
 TestTF4.3;1;1;1;;1
