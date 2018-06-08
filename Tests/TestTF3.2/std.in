@@ -1,0 +1,3 @@
+LOAD e2.txt
+ANALYSE e.txt
+QUITTER

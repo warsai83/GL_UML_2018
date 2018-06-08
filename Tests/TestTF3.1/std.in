@@ -1,0 +1,3 @@
+LOAD empreintes.txt
+ANALYSE e2.txt
+QUITTER
