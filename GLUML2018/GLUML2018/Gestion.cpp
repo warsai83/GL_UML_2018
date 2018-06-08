@@ -61,6 +61,10 @@ vector<Empreinte> Gestion::GetDetail(vector<Maladie>& setMaladie, string nomMala
 }
 
 vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, string path) {
+	if (references.empty()) {
+		c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
+		return;
+	}
 	vector <Empreinte> e = LectureBase(path);
 	//cout << e.toString();
 	string maladieSupposee;
@@ -108,7 +112,6 @@ vector<Empreinte> Gestion::LectureBase(string path) {
 }
 
 void Gestion::ChargerListeMaladies(vector<Empreinte>& listeEmpreinte, vector<Maladie>& listeMaladie) {
-
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 		if (i->getDisease() != "") {
 			if (listeMaladie.empty()) {
