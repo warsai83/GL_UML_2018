@@ -1,1 +1,1 @@
-Test vérifiant la réponse lorsque l'empreinte à ajouter envoyée est du bon format mais n'est pas correctement formulée.
+Test vérifiant la réponse lorsque l'empreinte envoyée est du bon format mais que le fichier possède des erreurs.

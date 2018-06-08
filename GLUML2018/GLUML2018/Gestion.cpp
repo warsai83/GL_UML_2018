@@ -88,17 +88,38 @@ vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, strin
 
 vector<Empreinte> Gestion::LectureBase(string path) {
 	Lecture l (path);
-	vector<Empreinte> listeEmpreintes;
-	vector<vector<string>> empreintes = l.Charger();
-	for (std::vector<vector<string>>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
-		listeEmpreintes.push_back(stringToEmpreinte(*i));
-	}
-	return listeEmpreintes;
+    vector<Empreinte> listeEmpreintes;
+	if(l.LecturePossible)
+	{
+        vector<vector<string>> empreintes = l.Charger();
+        for (std::vector<vector<string>>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
+        	Empreinte test=stringToEmpreinte(*i);
+        	if(test.Disease!="ERREUR") {
+				listeEmpreintes.push_back(stringToEmpreinte(*i));
+				return listeEmpreintes;
+			}
+			else {
+				c->afficherErreur("Erreur d'empreinte dans le fichier");
+				vector<Empreinte> listeFausse;
+				return listeFausse;
+        	}
+        }
+    }
+    return listeEmpreintes;
 }
 
 
 Empreinte Gestion::stringToEmpreinte(vector<string>& attributes) {
-	return Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), attributes[5]);
+	try{
+		Empreinte e = Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), attributes[5]);
+		return e;
+	}
+	catch(invalid_argument i)
+	{
+		Empreinte eVide = Empreinte(0,"ERREUR",0,0,0,"ERREUR");
+		return eVide;
+	}
+
 }
 
 //-------------------------------------------- Constructeurs - destructeur
