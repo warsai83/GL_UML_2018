@@ -35,10 +35,10 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 
 int main()
 {
-	//const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
+	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
 	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
     //const string CHEMIN_RACINE="./";
-    const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
+    //const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenue sur le service Malad'If ! \r\n");
 	bool continuer=true;
@@ -99,10 +99,10 @@ int main()
 			    listeEmpreinte = Gestion::LectureBase(nomFichier);
 			    if(listeEmpreinte.begin()!=listeEmpreinte.end())
                 {
-                    c->afficherMessage("Succes de l'envoi du fichier d'empreintes");
-                    c->afficherMessage("Chargement de BD...");
                     //Traitement des listeEmpreinte
-					Gestion::chargerListeMaladies(listeEmpreinte, listeMaladie);
+					if(!listeEmpreinte.empty()){
+						Gestion::chargerListeMaladies(listeEmpreinte, listeMaladie);
+					}
                     c->afficherMessage("Chargement termine");
                 }
 			}
