@@ -88,17 +88,64 @@ vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, strin
 
 vector<Empreinte> Gestion::LectureBase(string path) {
 	Lecture l (path);
-	vector<Empreinte> listeEmpreintes;
-	vector<vector<string>> empreintes = l.Charger();
-	for (std::vector<vector<string>>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
-		listeEmpreintes.push_back(stringToEmpreinte(*i));
-	}
-	return listeEmpreintes;
+    vector<Empreinte> listeEmpreintes;
+	if(l.LecturePossible)
+	{
+        vector<vector<string>> empreintes = l.Charger();
+        for (std::vector<vector<string>>::iterator i = empreintes.begin(); i != empreintes.end(); i++) {
+        	Empreinte test=stringToEmpreinte(*i);
+        	if(test.Disease!="ERREUR") {
+				listeEmpreintes.push_back(stringToEmpreinte(*i));
+				return listeEmpreintes;
+			}
+			else {
+				c->afficherErreur("Erreur d'empreinte dans le fichier");
+				vector<Empreinte> listeFausse;
+				return listeFausse;
+        	}
+        }
+    }
+    return listeEmpreintes;
 }
 
+void Gestion::chargerListeMaladies(vector<Empreinte> listeEmpreinte, vector<Maladie> listeMaladie) {
+	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
+		if (i->getDisease() != "") {
+			if (listeMaladie.empty()) {
+				Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+				nouvelleMaladie.AjouterEmpreinte(*i);
+				listeMaladie.push_back(nouvelleMaladie);
+			}
+			else {
+				bool maladieTrouve = false;
+				for (std::vector<Maladie>::iterator im = listeMaladie.begin(); im != listeMaladie.end(); im++) {
+					if (im->getName() == i->getDisease()) {
+						im->AjouterEmpreinte(*i);
+						maladieTrouve = true;
+						break;
+					}
+				}
+				if (!maladieTrouve) {
+					Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+					nouvelleMaladie.AjouterEmpreinte(*i);
+					listeMaladie.push_back(nouvelleMaladie);
+				}
+			}
+		}
+	}
+}
 
 Empreinte Gestion::stringToEmpreinte(vector<string>& attributes) {
-	return Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), attributes[5]);
+	try{
+		Empreinte e = Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), attributes[5]);
+		return e;
+	}
+	catch(invalid_argument i)
+	{
+		Empreinte eVide = Empreinte(0,"ERREUR",0,0,0,"ERREUR");
+		return eVide;
+	}
+
 }
 
 //-------------------------------------------- Constructeurs - destructeur

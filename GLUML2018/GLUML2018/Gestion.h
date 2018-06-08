@@ -52,6 +52,7 @@ public:
 	static vector<Empreinte> GetDetail(vector<Maladie>& setMaladie, string nomMaladie);
 	static vector<Empreinte> AnalyseEmpreinte(vector<Empreinte>&,string );
 	static vector<Empreinte> LectureBase(string);
+	static void chargerListeMaladies(vector<Empreinte>, vector<Maladie>);
 	static Empreinte stringToEmpreinte(vector<string>&);
 
 
@@ -69,13 +70,13 @@ public:
 	// Contrat :
 	//
 
+
 	//------------------------------------------------------------------ PRIVE
 
 protected:
 	//----------------------------------------------------- M�thodes prot�g�es
 
 	//----------------------------------------------------- Attributs prot�g�s
-
 };
 
 //-------------------------------- Autres d�finitions d�pendantes de <GestionEmpreinte>
