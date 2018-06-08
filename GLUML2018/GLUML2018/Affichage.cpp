@@ -35,9 +35,9 @@ void SeparerString(string* result, string* s, const char separateur=' ')
 
 int main()
 {
-	const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
+	//const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
 	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
-    //const string CHEMIN_RACINE="./";
+    const string CHEMIN_RACINE="./";
     //const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenue sur le service Malad'If ! \r\n");
@@ -80,11 +80,22 @@ int main()
 		}
 		else if (commande[0]=="DETAILSMALADIE")
 		{
-			c->afficherMessage("Affichage des détails de la maladie ...");
-			string nomMaladie = commande[1];
-			vector<Empreinte> detailsMaladie = Gestion::GetDetail(listeMaladie, nomMaladie);
-			string listeEmpreinte = Gestion::AfficherEmpreinte(detailsMaladie);
-			c->afficherMessage(listeEmpreinte);
+		    if(listeMaladie.empty()){
+		        c->afficherDanger("Warning, la base de maladie est vide");
+		    }
+		    if(commande[1]==commande[0]){
+		        c->afficherErreur("Erreur, impossible de lire la valeur de la maladie");
+		    }else {
+                c->afficherMessage("Affichage des détails de la maladie ...");
+                string nomMaladie = commande[1];
+                vector<Empreinte> detailsMaladie = Gestion::GetDetail(listeMaladie, nomMaladie);
+                if (!detailsMaladie.empty()) {
+                    string listeEmpreinte = Gestion::AfficherEmpreinte(detailsMaladie);
+                    c->afficherMessage(listeEmpreinte);
+                }else{
+                    c->afficherErreur("Erreur, Maladie introuvable");
+                }
+            }
 		}
 		else if (commande[0] == "LOAD")
 		{
