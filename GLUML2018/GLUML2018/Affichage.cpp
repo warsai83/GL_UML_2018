@@ -101,7 +101,7 @@ int main()
                     c->afficherMessage("Chargement de BD...");
                     //Traitement des listeEmpreinte
 					if(!listeEmpreinte.empty()){
-						Gestion::chargerListeMaladies(listeEmpreinte, listeMaladie);
+						Gestion::ChargerListeMaladies(listeEmpreinte, listeMaladie);
 					}
                     c->afficherMessage("Chargement termine");
                 }
