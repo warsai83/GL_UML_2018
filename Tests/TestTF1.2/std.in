@@ -1,1 +1,3 @@
-LOAD rate.java
+LOAD empreintes.txt
+ANALYSE empreintes.java
+QUITTER

@@ -1,2 +1,3 @@
-LOAD fausse.txt
+LOAD empreintes.txt
+ANALYSE fausse.txt
 QUITTER
