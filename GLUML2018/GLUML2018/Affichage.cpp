@@ -20,6 +20,7 @@ e-mail               :  matthieu.halunka@insa-lyon.fr
 
 //------------------------------------------------------ Include personnel
 #include "Affichage.h"
+#include "Lecture.h"
 
 //------------------------------------------------------------- Constantes
 //----------------------------------------------------------------- PUBLIC
@@ -92,18 +93,45 @@ int main()
 			format=commande[1].substr((commande[1].length())-4,commande[1].length());
 			if(format==".txt")
 			{
-				c->afficherMessage("Succes de l'envoi du fichier d'empreintes");
-				c->afficherMessage("Chargement de BD...");
+
 				string nomFichier = CHEMIN_RACINE + commande[1];
 			    listeEmpreinte = Gestion::LectureBase(nomFichier);
-			    //Traitement des listeEmpreinte
-				Gestion::chargerListeMaladies(listeEmpreinte, listeMaladie);
+			    if(listeEmpreinte.begin()!=listeEmpreinte.end())
+                {
+                    c->afficherMessage("Succes de l'envoi du fichier d'empreintes");
+                    c->afficherMessage("Chargement de BD...");
+                    //Traitement des listeEmpreinte
+                    if(!listeEmpreinte.empty()) {
+                        for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin();
+                             i != listeEmpreinte.end(); i++) {
+                            if (i->getDisease() != "") {
+                                if (listeMaladie.empty()) {
+                                    Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+                                    nouvelleMaladie.AjouterEmpreinte(*i);
+                                    listeMaladie.push_back(nouvelleMaladie);
+                                } else {
+                                    bool maladieTrouve = false;
+                                    for (std::vector<Maladie>::iterator im = listeMaladie.begin();
+                                         im != listeMaladie.end(); im++) {
+                                        if (im->getName() == i->getDisease()) {
+                                            im->AjouterEmpreinte(*i);
+                                            maladieTrouve = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!maladieTrouve) {
+                                        Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+                                        nouvelleMaladie.AjouterEmpreinte(*i);
+                                        listeMaladie.push_back(nouvelleMaladie);
+                                    }
+                                }
+                            }
+                        }
+                        c->afficherMessage("Chargement termine");
+                    }
+                }
 			}
 
-				c->afficherMessage("Chargement termine");
-
-
-			}
 			else
 			{
 				c->afficherErreur("Erreur, le format de l'empreinte n'est pas valide");
