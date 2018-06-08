@@ -108,7 +108,10 @@ vector<Empreinte> Gestion::LectureBase(string path) {
 }
 
 void Gestion::ChargerListeMaladies(vector<Empreinte>& listeEmpreinte, vector<Maladie>& listeMaladie) {
-
+	if (listeMaladie.empty()) {
+		c->afficherErreur("Warning, la base ne contient pas de maladie référencée");
+		return;
+	}
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 		if (i->getDisease() != "") {
 			if (listeMaladie.empty()) {
