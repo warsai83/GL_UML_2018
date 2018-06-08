@@ -97,30 +97,7 @@ int main()
 				string nomFichier = CHEMIN_RACINE + commande[1];
 			    listeEmpreinte = Gestion::LectureBase(nomFichier);
 			    //Traitement des listeEmpreinte
-			    if(!listeEmpreinte.empty()){
-				for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
-					if(i->getDisease()!=""){
-						if(listeMaladie.empty()){
-							Maladie nouvelleMaladie=*(new Maladie(i->getDisease()));
-							nouvelleMaladie.AjouterEmpreinte(*i);
-							listeMaladie.push_back(nouvelleMaladie);
-						}else{
-							bool maladieTrouve=false;
-							for (std::vector<Maladie>::iterator im = listeMaladie.begin(); im != listeMaladie.end(); im++) {
-								if(im->getName()==i->getDisease()){
-									im->AjouterEmpreinte(*i);
-									maladieTrouve=true;
-									break;
-								}
-							}
-							if(!maladieTrouve){
-								Maladie nouvelleMaladie=*(new Maladie(i->getDisease()));
-								nouvelleMaladie.AjouterEmpreinte(*i);
-								listeMaladie.push_back(nouvelleMaladie);
-							}
-						}
-					}
-				}
+				Gestion::chargerListeMaladies(listeEmpreinte, listeMaladie);
 			}
 
 				c->afficherMessage("Chargement termine");

@@ -96,6 +96,32 @@ vector<Empreinte> Gestion::LectureBase(string path) {
 	return listeEmpreintes;
 }
 
+void Gestion::chargerListeMaladies(vector<Empreinte> listeEmpreinte, vector<Maladie> listeMaladie) {
+	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
+		if (i->getDisease() != "") {
+			if (listeMaladie.empty()) {
+				Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+				nouvelleMaladie.AjouterEmpreinte(*i);
+				listeMaladie.push_back(nouvelleMaladie);
+			}
+			else {
+				bool maladieTrouve = false;
+				for (std::vector<Maladie>::iterator im = listeMaladie.begin(); im != listeMaladie.end(); im++) {
+					if (im->getName() == i->getDisease()) {
+						im->AjouterEmpreinte(*i);
+						maladieTrouve = true;
+						break;
+					}
+				}
+				if (!maladieTrouve) {
+					Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+					nouvelleMaladie.AjouterEmpreinte(*i);
+					listeMaladie.push_back(nouvelleMaladie);
+				}
+			}
+		}
+	}
+}
 
 Empreinte Gestion::stringToEmpreinte(vector<string>& attributes) {
 	return Empreinte(stoi(attributes[0]), attributes[1], stod(attributes[2]), stod(attributes[3]), stod(attributes[4]), attributes[5]);
