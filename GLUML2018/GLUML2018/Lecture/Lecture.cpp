@@ -27,7 +27,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Lecture.h"
-#include "Console.h"
+#include "../Vue/Console.h"
 //----------------------------------------------------------------- PUBLIC
 extern Console* c;
 

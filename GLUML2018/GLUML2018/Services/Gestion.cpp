@@ -26,8 +26,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Gestion.h"
-#include "Lecture.h"
-#include "Console.h"
+#include "../Lecture/Lecture.h"
+#include "../Vue/Console.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
@@ -64,7 +64,7 @@ vector<Empreinte> Gestion::AnalyseEmpreinte(vector<Empreinte>& references, strin
 	if (references.empty()) {
 		c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
 	}
-	vector <Empreinte> e = LectureBase(path);
+	vector <Empreinte>  e= LectureBase(path);
 	//cout << e.toString();
 	string maladieSupposee;
 	double ecartMoyenneMin = 10000, ecartTypeMin = 10000;

@@ -22,8 +22,8 @@ using namespace std;
 #include <fstream>
 #include <string>
 
-#include "Maladie.h"
-#include "Empreinte.h"
+#include "../ObjetsMetiers/Maladie.h"
+#include "../ObjetsMetiers/Empreinte.h"
 //------------------------------------------------------------------------
 // Rôle de la classe <Generateur>
 //  Classe permettant de créer un fichier dont le contenu respectera

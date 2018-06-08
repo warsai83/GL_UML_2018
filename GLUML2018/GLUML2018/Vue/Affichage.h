@@ -24,8 +24,8 @@ e-mail               :  matthieu.halunka@insa-lyon.fr
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
 #include "Console.h"
-#include "Maladie.h"
-#include "Gestion.h"
+#include "../ObjetsMetiers/Maladie.h"
+#include "../Services/Gestion.h"
 using namespace std;
 //------------------------------------------------------------- Constantes
 Console* c = new Console();

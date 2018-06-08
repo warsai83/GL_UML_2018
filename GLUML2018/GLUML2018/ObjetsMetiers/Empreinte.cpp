@@ -17,7 +17,7 @@ e-mail               :	matthieu.halunka@insa-lyon.fr
 
 //---------------------------------------------------------------- INCLUDE
 #include "Empreinte.h"
-#include "Console.h"
+#include "../Vue/Console.h"
 //----------------------------------------------------------------- PUBLIC
 extern Console* c;
 
