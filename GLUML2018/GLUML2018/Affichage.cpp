@@ -93,15 +93,15 @@ int main()
 			format=commande[1].substr((commande[1].length())-4,commande[1].length());
 			if(format==".txt")
 			{
-				c->afficherMessage("Succes de l'envoi du fichier d'empreintes");
-				c->afficherMessage("Chargement de BD...");
 				string nomFichier = CHEMIN_RACINE + commande[1];
 			    listeEmpreinte = Gestion::LectureBase(nomFichier);
 			    if(listeEmpreinte.begin()!=listeEmpreinte.end())
                 {
+                    c->afficherMessage("Succes de l'envoi du fichier d'empreintes");
+                    c->afficherMessage("Chargement de BD...");
                     //Traitement des listeEmpreinte
 					if(!listeEmpreinte.empty()){
-						Gestion::chargerListeMaladies(listeEmpreinte, listeMaladie);
+						Gestion::ChargerListeMaladies(listeEmpreinte, listeMaladie);
 					}
                     c->afficherMessage("Chargement termine");
                 }
