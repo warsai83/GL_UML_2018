@@ -37,8 +37,8 @@ int main()
 {
 	//const string CHEMIN_RACINE="../GLUML2018/GLUML2018/";
 	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\GLUML2018\\GLUML2018\\" ;
-    //const string CHEMIN_RACINE="./";
-    const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
+    const string CHEMIN_RACINE="../";
+    //const string CHEMIN_RACINE="../../GLUML2018/GLUML2018/";
 	//initialiserEmpreintes();
 	c->afficherMessage("Bienvenue sur le service Malad'If ! \r\n");
 	bool continuer=true;
@@ -67,15 +67,16 @@ int main()
 		else if (commande[0]=="LISTEMALADIES")
 		{
 			c->afficherMessage("Affichage de la liste des maladies ...");
-			/*if (listeMaladie.begin() == listeMaladie.end())
-			{
-				c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
-			}*/
 			set<string> maladiesConnues;
-			Gestion::GetListeMaladie(listeEmpreinte, maladiesConnues);
-			for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
-				c->afficherMessage(*it + "\r\n");
-			}
+            if (listeMaladie.begin() == listeMaladie.end())
+            {
+                c->afficherDanger("Warning, la base ne contient pas de maladie référencée");
+            }else{
+                Gestion::GetListeMaladie(listeMaladie, maladiesConnues);
+                for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
+                    c->afficherMessage(*it + "\r\n");
+                }
+            }
 		}
 		else if (commande[0]=="DETAILSMALADIE")
 		{
@@ -122,10 +123,7 @@ int main()
 					}
 				}
 			}
-
 				c->afficherMessage("Chargement termine");
-
-
 			}
 			else
 			{
