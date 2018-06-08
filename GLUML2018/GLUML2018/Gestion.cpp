@@ -96,7 +96,6 @@ vector<Empreinte> Gestion::LectureBase(string path) {
         	Empreinte test=stringToEmpreinte(*i);
         	if(test.Disease!="ERREUR") {
 				listeEmpreintes.push_back(stringToEmpreinte(*i));
-				return listeEmpreintes;
 			}
 			else {
 				c->afficherErreur("Erreur d'empreinte dans le fichier");
