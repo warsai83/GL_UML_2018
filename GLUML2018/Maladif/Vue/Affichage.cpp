@@ -1,8 +1,8 @@
 /*************************************************************************
                             Affichage  -  description
-            Classe gÈrant l'interaction avec l'utilisateur
+            Classe g√©rant l'interaction avec l'utilisateur
                             -------------------
-dÈbut                : 02-05-2018
+d√©but                : 02-05-2018
 copyright            : (C) 2018 par Halunka Matthieu, Mathilde Moureau
                                     Stanley Cheah, William Occelli
 e-mail               :  matthieu.halunka@insa-lyon.fr
@@ -12,11 +12,11 @@ e-mail               :  matthieu.halunka@insa-lyon.fr
 
 *************************************************************************/
 
-//--- RÈalisation de la classe <Affichage> (fichier Affichage.cpp) -------
+//--- R√©alisation de la classe <Affichage> (fichier Affichage.cpp) -------
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include systËme
+//-------------------------------------------------------- Include syst√®me
 
 //------------------------------------------------------ Include personnel
 #include "Affichage.h"
@@ -24,7 +24,7 @@ e-mail               :  matthieu.halunka@insa-lyon.fr
 //------------------------------------------------------------- Constantes
 //----------------------------------------------------------------- PUBLIC
 
-//----------------------------------------------------- MÈthodes publiques
+//----------------------------------------------------- M√©thodes publiques
 void SeparerString(string* result, string* s, const char separateur=' ')
 {
 	size_t pos1 = s->find(separateur);
@@ -78,7 +78,7 @@ int main()
 			set<string> maladiesConnues;
             if (listeMaladie.begin() == listeMaladie.end())
             {
-                c->afficherDanger("Warning, la base ne contient pas de maladie rÈfÈrencÈe");
+                c->afficherDanger("Warning, la base ne contient pas de maladie r√©f√©renc√©e");
             }else{
                 Gestion::GetListeMaladie(listeMaladie, maladiesConnues);
                 for (std::set<string>::iterator it = maladiesConnues.begin(); it != maladiesConnues.end(); it++) {
@@ -94,7 +94,7 @@ int main()
 		    if(commande[1]==commande[0]){
 		        c->afficherErreur("Erreur, impossible de lire la valeur de la maladie");
 		    }else {
-                c->afficherMessage("Affichage des dÈtails de la maladie ...");
+                c->afficherMessage("Affichage des d√©tails de la maladie ...");
                 string nomMaladie = commande[1];
                 vector<Empreinte> detailsMaladie = Gestion::GetDetail(listeMaladie, nomMaladie);
                 if (!detailsMaladie.empty()) {
@@ -133,9 +133,9 @@ int main()
 		}
         else if (commande[0] == "LIMIT")
 		{
-			c->afficherMessage("Le nombre d'ÈlÈments empreintes maximum stockable est de :");
+			c->afficherMessage("Le nombre d'√©l√©ments empreintes maximum stockable est de :");
 			c->afficherTaille(listeEmpreinte.max_size());
-            c->afficherMessage("Le nombre d'ÈlÈments maladies maximum stockable est de :");
+            c->afficherMessage("Le nombre d'√©l√©ments maladies maximum stockable est de :");
             c->afficherTaille(listeMaladie.max_size());
         }
 		else if (commande[0] == "QUITTER")
