@@ -1,0 +1,81 @@
+.TH Malad'IF 1 "7 juin 2018" "" "./Maladif"
+
+.SH NOM
+Malad'IF \- Outil pour diagnostiquer les maladies.
+
+.SH SYNOPSIS
+.B ./MaladIF
+
+.SH DESCRIPTION
+.PP
+Bienvenue et merci d’avoir acheté notre capteur à usage medical ! 
+.br
+Ci-dessous, vous trouverez le moyen d’utiliser notre capteur de 
+maniere adaptée afin de profiter de l’ensemble des fonctionnalités ainsi disponibles.
+
+.SH MISE EN PLACE DU SERVICE
+.PP
+Afin de pouvoir utiliser notre service, vous avez besoin de mettre en place ce dernier. 
+.br
+Pour cela, à l’aide d’une interface console (shell linux par exemple),  vous devez vous placer dans la racine du dossier contenant l'application.
+.br
+Une fois cela réalisé, exécuter la commande suivante pour compiler et lancer l'application :
+.br
+$ make && ./MaladIF
+
+.SH UTILISATION DU SERVICE DE DIAGNOSTIQUE
+.PP
+Pour lancer l'application, une fois celle-ci mise en place, vous pouvez utiliser la commande :
+.br
+$ ./MaladIF
+.br
+L’utilisation de cette application se fait à partir d’une interface console qui prend des commandes en mode texte.
+.br
+Un menu sera affiché afin de vous aider à interagir avec cette dernière et que vous puissiez utiliser ces fonctionnalités facilement.
+.br
+Les actions réalisables seront décrites dans la section qui suit.
+
+.SH DIFFERENTES COMMANDES PROPOSEES
+Les différentes actions réalisables à travers votre interface sont :
+
+.IP "ANALYSE <CheminFichierEmpreintesAAnalyser>"
+Permet d'analyser des empreintes contenues dans le fichier situé au chemin indiqué.
+.br
+Exemple : ANALYSE ../monEmpreinte.txt
+.br
+Cette analyse affiche l'ensemble des maladies trouvées par patients.
+
+.IP "LISTEMALADIES"
+Permet d'afficher l'ensemble des maladies connues au sein de votre base.
+
+.IP "DETAILSMALADIE <NomMaladie>"
+Permet d'afficher l'empreinte associée à la maladie desirée.
+.br
+ATTENTION - Cette maladie devra etre connue au sein de votre base.
+
+.IP "CHARGER <NomFichierEmpreintesFournies>"
+Permet de charger un ensemble de maladies dans votre base de maladie connues.
+.br
+Exemple : Charger ../listeMaladies.txt
+
+.IP "LIMIT"
+Permet d'afficher les capacités de traitement de l'application.
+.br
+
+.IP "QUITTER"
+Permet de quitter l'application et de fermer cette dernière.
+.br
+
+.SH AUTEURS
+.B Stanley Cheah
+\- stanley.cheah@insa-lyon.fr
+.br
+.B Matthieu Halunka
+\- matthieu.halunka@insa-lyon.fr
+.br
+.B Mathilde Moureau
+\- mathilde.moureau@insa-lyon.fr
+.br
+.B William Occelli
+\- william.occelli@insa-lyon.fr
+

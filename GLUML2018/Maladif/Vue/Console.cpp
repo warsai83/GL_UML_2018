@@ -67,6 +67,9 @@ void Console::afficherMessage(const string &msg) {
 	cout << msg << endl;
 }//----- Fin de afficherMessage
 
+// afficherTaille(const size_t &taille)
+// Algorithme :
+//      Affiche le size_type sur la console
 void Console::afficherTaille(const size_t &taille) {
     cout << taille << endl;
 }//----- Fin de afficherMessage

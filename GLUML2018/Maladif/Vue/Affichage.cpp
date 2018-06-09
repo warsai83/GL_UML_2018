@@ -39,7 +39,7 @@ int main()
 	//const string CHEMIN_RACINE ="C:\\Users\\William\\Desktop\\Jeux (2)\\GitHub\\GL_UML_2018\\Maladif\\Maladif\\" ;
     const string CHEMIN_RACINE="./";
     //const string CHEMIN_RACINE="../../Maladif/Maladif/";
-	//initialiserEmpreintes();
+
 	c->afficherMessage("Bienvenue sur le service Malad'If ! \r\n");
 	bool continuer=true;
 	while (continuer)

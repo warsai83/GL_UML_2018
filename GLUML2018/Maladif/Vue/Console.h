@@ -35,45 +35,61 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
-// type Nom ( liste de paramètres );
-// Mode d'emploi :
-//
-// Contrat :
-//
 class Console {
-
-#ifdef DEBUG
-	// ostream & debug ( ostream & os )
-	//ostream & debug(ostream & os);
-#endif
-
-	 // ostream & erreur ( ostream & os )
-	/*ostream & erreur(ostream & os);
-
-	 // ostream & attention( ostream & os )
-	ostream & attention(ostream & os);
-
-	 // ostream & debug ( ostream & os )
-	ostream & raz(ostream & os);*/
 
 	//----------------------------------------------------------------- PUBLIC
 public:
 	//----------------------------------------------------- Méthodes publiques
 
 #ifdef DEBUG
+	// void afficherDebug(const string &info);
+	// Mode d'emploi :
+	//		Affiche le string passé en paramètre sur cout
+	// Contrat :
+	//		Aucun
 	void afficherDebug(const string &info);
 #endif
-
+	// void afficherErreur(const string &err);
+	// Mode d'emploi :
+	//		Affiche le string passé en paramètre sur cerr
+	// Contrat :
+	//		Aucun
 	void afficherErreur(const string &err);
 
+	// void afficherDanger(const string &danger);
+	// Mode d'emploi :
+	//		Affiche le string passé en paramètre sur cout
+	// Contrat :
+	//		Aucun
 	void afficherDanger(const string &danger);
 
+	// void afficherMessage(const string &msg);
+	// Mode d'emploi :
+	//		Affiche le string passé en paramètre sur cout
+	// Contrat :
+	//		Aucun
 	void afficherMessage(const string &msg);
 
+	// void afficherTaille(const size_t &taille);
+	// Mode d'emploi :
+	//		Affiche le string passé en paramètre sur cout
+	// Contrat :
+	//		Aucun
 	void afficherTaille(const size_t &taille);
 
+	// int lireEntier();
+	// Mode d'emploi :
+	//		Permet de retourner un entier saisit sur la console
+	// Contrat :
+	//		Aucun
 	int lireEntier();
 
+	// string lireChaine();
+	// Mode d'emploi :
+	//		Permet de retourner un string saisit sur la console
+	//		(Ce dernier sera différent du caractère \r et non-vide)
+	// Contrat :
+	//		Aucun
 	string lireChaine();
 	//-------------------------------------------- Constructeurs - destructeur
 

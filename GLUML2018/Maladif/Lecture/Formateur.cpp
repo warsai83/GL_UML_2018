@@ -35,7 +35,6 @@ extern Console* c;
 // Algorithme :
 //      Décompose la trame obtenue en éléments simples
 //      puis formate certains éléments pour les rendre exploitables
-//      par la classe Analog.
 void Formateur::Decouper(string ligneLue="") {
 	if (ligneLue == "") {
 		return;

@@ -116,9 +116,11 @@ void Gestion::ChargerListeMaladies(vector<Empreinte>& listeEmpreinte, vector<Mal
 	for (std::vector<Empreinte>::iterator i = listeEmpreinte.begin(); i != listeEmpreinte.end(); i++) {
 		if (i->getDisease() != "") {
 			if (listeMaladie.empty()) {
-				Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+				Maladie* nouvelleMaladiePtr = new Maladie(i->getDisease());
+				Maladie nouvelleMaladie=*(nouvelleMaladiePtr);
 				nouvelleMaladie.AjouterEmpreinte(*i);
 				listeMaladie.push_back(nouvelleMaladie);
+				delete(nouvelleMaladiePtr);
 			}
 			else {
 				bool maladieTrouve = false;
@@ -130,9 +132,11 @@ void Gestion::ChargerListeMaladies(vector<Empreinte>& listeEmpreinte, vector<Mal
 					}
 				}
 				if (!maladieTrouve) {
-					Maladie nouvelleMaladie = *(new Maladie(i->getDisease()));
+					Maladie* nouvelleMaladiePtr = new Maladie(i->getDisease());
+					Maladie nouvelleMaladie=*(nouvelleMaladiePtr);
 					nouvelleMaladie.AjouterEmpreinte(*i);
 					listeMaladie.push_back(nouvelleMaladie);
+					delete(nouvelleMaladiePtr);
 				}
 			}
 		}
