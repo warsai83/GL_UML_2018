@@ -3,6 +3,7 @@ TestTF1.1;1;1;1;;1
 TestTF1.2;1;1;1;;1
 TestTF1.3;1;1;1;;1
 TestTF1.4;1;1;1;;1
+TestTF2.1;2;1;1;;1
 TestTF3.1;1;1;1;;1
 TestTF3.2;1;1;1;;1
 TestTF4.1;1;1;1;;1
@@ -12,7 +13,7 @@ TestTF4.4;1;1;1;;1
 TestTF5.1;1;1;1;;1
 TestTF5.2;1;1;1;;1
 TestTF6.1;1;1;1;;1
-TestTF6.2;2;1;2;;1
+TestTF6.2;1;1;1;;1
 TestTF7.1;1;1;1;;1
 TestTF7.2;1;1;1;;1
 TestTF7.3;1;1;1;;1
